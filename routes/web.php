@@ -23,3 +23,9 @@ Auth::routes();
 
 Route::resource('admins', App\Http\Controllers\AdminController::class);
 Route::get('admin/export/', [App\Http\Controllers\AdminController::class, 'export']);
+
+// usage inside a laravel route
+Route::get('/intervention', function () {
+    $img = Image::make('https://assets.infyom.com/logo/blue_logo_150x150.png')->resize(300, 200);
+    return $img->response('jpg');
+});

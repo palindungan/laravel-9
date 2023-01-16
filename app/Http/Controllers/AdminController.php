@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\AdminDataTable;
+use App\Exports\AdminsExport;
 use App\Http\Requests\CreateAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\AdminRepository;
 use Illuminate\Http\Request;
 use Flash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends AppBaseController
 {
@@ -25,7 +27,7 @@ class AdminController extends AppBaseController
      */
     public function index(AdminDataTable $adminDataTable)
     {
-    return $adminDataTable->render('admins.index');
+        return $adminDataTable->render('admins.index');
     }
 
 
@@ -123,5 +125,10 @@ class AdminController extends AppBaseController
         Flash::success('Admin deleted successfully.');
 
         return redirect(route('admins.index'));
+    }
+
+    public function export()
+    {
+        return Excel::download(new AdminsExport, 'excel.xlsx');
     }
 }

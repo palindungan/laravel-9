@@ -22,3 +22,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::resource('admins', App\Http\Controllers\AdminController::class);
+Route::get('admin/export/', [App\Http\Controllers\AdminController::class, 'export']);

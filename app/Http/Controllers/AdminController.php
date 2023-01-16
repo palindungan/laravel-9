@@ -8,7 +8,6 @@ use App\Http\Requests\CreateAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\AdminRepository;
-use Illuminate\Http\Request;
 use Flash;
 use Maatwebsite\Excel\Facades\Excel;
 use Barryvdh\DomPDF\Facade\Pdf;

@@ -11,6 +11,7 @@ use App\Repositories\AdminRepository;
 use Illuminate\Http\Request;
 use Flash;
 use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class AdminController extends AppBaseController
 {
@@ -129,6 +130,13 @@ class AdminController extends AppBaseController
 
     public function export()
     {
-        return Excel::download(new AdminsExport, 'excel.xlsx');
+        if (request()->type == "excel") {
+            return Excel::download(new AdminsExport, 'excel.xlsx');
+        }
+
+        if (request()->type == "pdf") {
+            $pdf = Pdf::loadView('welcome', []);
+            return $pdf->download('welcome.pdf');
+        }
     }
 }

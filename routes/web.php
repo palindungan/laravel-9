@@ -29,3 +29,5 @@ Route::get('/intervention', function () {
     $img = Image::make('https://assets.infyom.com/logo/blue_logo_150x150.png')->resize(300, 200);
     return $img->response('jpg');
 });
+
+Route::get('generate-docx', [App\Http\Controllers\AdminController::class, 'generateDocx']);

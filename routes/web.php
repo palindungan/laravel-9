@@ -25,7 +25,6 @@ Route::group(['middleware' => ['auth:web']], function () {
     Route::get('admin/export/', [App\Http\Controllers\AdminController::class, 'export']);
     Route::get('admin/generate-docx', [App\Http\Controllers\AdminController::class, 'generateDocx']);
 
-    // usage inside a laravel route
     Route::get('/intervention', function () {
         $img = Image::make('https://assets.infyom.com/logo/blue_logo_150x150.png')->resize(300, 200);
         return $img->response('jpg');

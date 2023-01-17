@@ -22,6 +22,7 @@ Route::group(['middleware' => ['auth:web']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::resource('admins', App\Http\Controllers\AdminController::class);
+    Route::post('admin/import/', [App\Http\Controllers\AdminController::class, 'import']);
     Route::get('admin/export/', [App\Http\Controllers\AdminController::class, 'export']);
     Route::get('admin/generate-docx', [App\Http\Controllers\AdminController::class, 'generateDocx']);
 

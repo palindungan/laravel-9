@@ -24,6 +24,15 @@
         <div class="clearfix"></div>
 
         <div class="card">
+            <form action="{{ url('admin/import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="file">
+                <br>
+                <button class="btn btn-success">
+                    Import Data
+                </button>
+            </form>
+
             @include('admins.table')
         </div>
     </div>

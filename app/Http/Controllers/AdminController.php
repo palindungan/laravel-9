@@ -7,10 +7,12 @@ use App\Exports\AdminsExport;
 use App\Http\Requests\CreateAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Imports\AdminsImport;
 use App\Repositories\AdminRepository;
 use Flash;
 use Maatwebsite\Excel\Facades\Excel;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends AppBaseController
@@ -146,6 +148,12 @@ class AdminController extends AppBaseController
             $pdf = Pdf::loadView('welcome', []);
             return $pdf->download('welcome.pdf');
         }
+    }
+
+    public function import(Request $request)
+    {
+        Excel::import(new AdminsImport, $request->file('file')->store('files'));
+        return redirect()->back();
     }
 
     public function generateDocx()

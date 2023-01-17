@@ -13,7 +13,9 @@ class Admin extends Model
         'email',
         'email_verified_at',
         'password',
-        'remember_token'
+        'remember_token',
+        'photo',
+        'attachment'
     ];
 
     protected $casts = [
@@ -21,7 +23,9 @@ class Admin extends Model
         'email' => 'string',
         'email_verified_at' => 'datetime',
         'password' => 'string',
-        'remember_token' => 'string'
+        'remember_token' => 'string',
+        'photo' => 'string',
+        'attachment' => 'string'
     ];
 
     public static array $rules = [
@@ -31,8 +35,8 @@ class Admin extends Model
         'password' => 'required|string|max:255',
         'remember_token' => 'nullable|string|max:100',
         'created_at' => 'nullable',
-        'updated_at' => 'nullable'
+        'updated_at' => 'nullable',
+        'photo' => 'nullable|string|max:255',
+        'attachment' => 'nullable|string|max:255'
     ];
-
-    
 }

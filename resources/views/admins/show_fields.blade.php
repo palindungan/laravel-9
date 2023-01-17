@@ -28,3 +28,15 @@
     <p>{{ $admin->remember_token }}</p>
 </div>
 
+<!-- Photo Field -->
+<div class="col-sm-12">
+    {!! Form::label('photo', 'Photo:') !!}
+    <p>{{ $admin->photo }}</p>
+</div>
+
+<!-- Attachment Field -->
+<div class="col-sm-12">
+    {!! Form::label('attachment', 'Attachment:') !!}
+    <p>{{ $admin->attachment }}</p>
+</div>
+

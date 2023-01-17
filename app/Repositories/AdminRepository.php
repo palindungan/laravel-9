@@ -12,7 +12,9 @@ class AdminRepository extends BaseRepository
         'email',
         'email_verified_at',
         'password',
-        'remember_token'
+        'remember_token',
+        'photo',
+        'attachment'
     ];
 
     public function getFieldsSearchable(): array

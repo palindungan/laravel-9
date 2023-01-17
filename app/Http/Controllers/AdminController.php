@@ -107,7 +107,7 @@ class AdminController extends AppBaseController
         $input['photo'] = $update_media['photo'];
         $input['attachment'] = $update_media['attachment'];
 
-        $admin = $this->adminRepository->update($request->all(), $id);
+        $admin = $this->adminRepository->update($input, $id);
 
         Flash::success('Admin updated successfully.');
 

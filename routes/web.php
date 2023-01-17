@@ -17,21 +17,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// -------------------------- start of backend --------------------------
 Auth::routes();
+Route::group(['middleware' => ['auth:web']], function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('admins', App\Http\Controllers\AdminController::class);
+    Route::get('admin/export/', [App\Http\Controllers\AdminController::class, 'export']);
+    Route::get('generate-docx', [App\Http\Controllers\AdminController::class, 'generateDocx']);
 
-Route::resource('admins', App\Http\Controllers\AdminController::class);
-Route::get('admin/export/', [App\Http\Controllers\AdminController::class, 'export']);
-Route::get('generate-docx', [App\Http\Controllers\AdminController::class, 'generateDocx']);
-
-// usage inside a laravel route
-Route::get('/intervention', function () {
-    $img = Image::make('https://assets.infyom.com/logo/blue_logo_150x150.png')->resize(300, 200);
-    return $img->response('jpg');
+    // usage inside a laravel route
+    Route::get('/intervention', function () {
+        $img = Image::make('https://assets.infyom.com/logo/blue_logo_150x150.png')->resize(300, 200);
+        return $img->response('jpg');
+    });
 });
-// -------------------------- end of backend --------------------------
-
-// -------------------------- start of frontend --------------------------
-// -------------------------- end of frontend --------------------------

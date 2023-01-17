@@ -11,6 +11,7 @@ use App\Repositories\AdminRepository;
 use Flash;
 use Maatwebsite\Excel\Facades\Excel;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends AppBaseController
 {
@@ -45,6 +46,10 @@ class AdminController extends AppBaseController
     public function store(CreateAdminRequest $request)
     {
         $input = $request->all();
+
+        $update_media = $this->updateMedia([], $request);
+        $input['photo'] = $update_media['photo'];
+        $input['attachment'] = $update_media['attachment'];
 
         $admin = $this->adminRepository->create($input);
 
@@ -97,6 +102,10 @@ class AdminController extends AppBaseController
 
             return redirect(route('admins.index'));
         }
+
+        $update_media = $this->updateMedia(["admin" => $admin], $request);
+        $input['photo'] = $update_media['photo'];
+        $input['attachment'] = $update_media['attachment'];
 
         $admin = $this->adminRepository->update($request->all(), $id);
 
@@ -157,5 +166,56 @@ class AdminController extends AppBaseController
         }
 
         return response()->download(storage_path('helloWorld.docx'));
+    }
+
+    public function updateMedia($param = [], $request = null)
+    {
+        // photo
+        $input['photo'] = @$param['admin']->photo;
+        if ($request->hasFile('photo')) {
+            // delete old image
+            if (!empty($input['photo'])) {
+                if (Storage::disk('media')->exists($input['photo'])) {
+                    Storage::disk('media')->delete($input['photo']);
+                }
+            }
+
+            $file = $request->file('photo');
+            $name_file = $file->getClientOriginalName();
+            $custom_name_file = 'photo' . 'f' . time() . '.' . $file->extension();
+
+            $ori = $file->storeAs(
+                date('Ym'),
+                $custom_name_file,
+                'media'
+            );
+
+            $input['photo'] = $ori;
+        }
+
+        // attachment
+        $input['attachment'] = @$param['admin']->attachment;
+        if ($request->hasFile('attachment')) {
+            // delete old image
+            if (!empty($input['attachment'])) {
+                if (Storage::disk('document')->exists($input['attachment'])) {
+                    Storage::disk('document')->delete($input['attachment']);
+                }
+            }
+
+            $file = $request->file('attachment');
+            $name_file = $file->getClientOriginalName();
+            $custom_name_file = 'attachment' . 'f' . time() . '.' . $file->extension();
+
+            $ori = $file->storeAs(
+                date('Ym'),
+                $custom_name_file,
+                'document'
+            );
+
+            $input['attachment'] = $ori;
+        }
+
+        return $input;
     }
 }

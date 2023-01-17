@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth:web']], function () {
 
     Route::resource('admins', App\Http\Controllers\AdminController::class);
     Route::get('admin/export/', [App\Http\Controllers\AdminController::class, 'export']);
-    Route::get('generate-docx', [App\Http\Controllers\AdminController::class, 'generateDocx']);
+    Route::get('admin/generate-docx', [App\Http\Controllers\AdminController::class, 'generateDocx']);
 
     // usage inside a laravel route
     Route::get('/intervention', function () {

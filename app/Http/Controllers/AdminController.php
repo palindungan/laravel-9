@@ -73,7 +73,14 @@ class AdminController extends AppBaseController
             return redirect(route('admins.index'));
         }
 
-        return view('admins.show')->with('admin', $admin);
+        $audits = $admin->audits;
+
+        return view(
+            'admins.show',
+            compact(
+                'audits',
+            )
+        )->with('admin', $admin);
     }
 
     /**

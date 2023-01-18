@@ -105,6 +105,8 @@ class AdminController extends AppBaseController
             return redirect(route('admins.index'));
         }
 
+        $input = $request->all();
+
         $update_media = $this->updateMedia(["admin" => $admin], $request);
         $input['photo'] = $update_media['photo'];
         $input['attachment'] = $update_media['attachment'];

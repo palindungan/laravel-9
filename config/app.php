@@ -200,7 +200,8 @@ return [
         Yajra\DataTables\ButtonsServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class,
+        OwenIt\Auditing\AuditingServiceProvider::class,
 
     ],
 

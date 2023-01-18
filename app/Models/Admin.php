@@ -10,7 +10,9 @@ class Admin extends Model implements Auditable
 {
     use AuditableTrait;
 
-    protected $guarded = [];
+    // protected $guarded = [];
+    // protected $auditInclude = [];
+    // protected $auditExclude = [];
 
     public $table = 'admin';
 

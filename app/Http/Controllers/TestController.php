@@ -47,4 +47,9 @@ class TestController extends AppBaseController
             $number_current = $output;
         }
     }
+
+    public function soal3()
+    {
+        return view('tests.soal3');
+    }
 }

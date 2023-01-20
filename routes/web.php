@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/soal1', [App\Http\Controllers\TestController::class, 'soal1'])->name('soal1');
+Route::get('/soal3', [App\Http\Controllers\TestController::class, 'soal3'])->name('soal3');
 
 Auth::routes();
 Route::group(['middleware' => ['auth:web']], function () {

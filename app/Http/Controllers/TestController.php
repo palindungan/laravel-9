@@ -126,17 +126,20 @@ class TestController extends AppBaseController
     {
         DB::statement("SET SQL_MODE=''");
 
-        $soal1 = DB::raw("
+        $soal2 = DB::raw("
             SELECT
                 mar_mas_item.*,
-                mar_mas_tra_order_detail.qty
+                mar_mas_tra_order_detail.qty,
+                sum(mar_mas_tra_order_detail.qty) AS qty_sold
             FROM
                 mar_mas_tra_order_detail
-            INNER JOIN mar_mas_item ON mar_mas_item.id = mar_mas_tra_order_detail.item_id  
-            ORDER BY `mar_mas_tra_order_detail`.`qty`  DESC
+            LEFT JOIN mar_mas_item ON mar_mas_item.id = mar_mas_tra_order_detail.item_id  
+            GROUP BY
+                mar_mas_tra_order_detail.item_id
+            ORDER BY sum(mar_mas_tra_order_detail.qty) DESC
         ");
-        return DB::select($soal1);
-        return $soal1;
+        return DB::select($soal2);
+        return $soal2;
     }
 
     public function soalQuery3()

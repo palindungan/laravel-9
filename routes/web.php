@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 Route::get('/soal1', [App\Http\Controllers\TestController::class, 'soal1'])->name('soal1');
 Route::get('/soal3', [App\Http\Controllers\TestController::class, 'soal3'])->name('soal3');
+Route::get('/soalQuery', [App\Http\Controllers\TestController::class, 'soalQuery'])->name('soalQuery');
+Route::get('/soalQuery2', [App\Http\Controllers\TestController::class, 'soalQuery2'])->name('soalQuery2');
+Route::get('/soalQuery3', [App\Http\Controllers\TestController::class, 'soalQuery3'])->name('soalQuery3');
+Route::get('/soalQuery4', [App\Http\Controllers\TestController::class, 'soalQuery4'])->name('soalQuery4');
 
 Auth::routes();
 Route::group(['middleware' => ['auth:web']], function () {

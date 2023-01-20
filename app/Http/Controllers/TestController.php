@@ -51,7 +51,13 @@ class TestController extends AppBaseController
 
     public function soal2()
     {
-        return view('tests.soal2');
+        for ($i = 1; $i < 10; $i++) {
+            print("y: $i |");
+            for ($j = 9; $j > 0; $j--) {
+                print(" x:$j");
+            }
+            print("<br>");
+        }
     }
 
     public function soal3()

@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/soal1', [App\Http\Controllers\TestController::class, 'soal1'])->name('soal1');
+
 Auth::routes();
 Route::group(['middleware' => ['auth:web']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

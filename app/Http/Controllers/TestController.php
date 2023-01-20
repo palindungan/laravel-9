@@ -48,6 +48,11 @@ class TestController extends AppBaseController
         }
     }
 
+    public function soal2()
+    {
+        return view('tests.soal2');
+    }
+
     public function soal3()
     {
         return view('tests.soal3');

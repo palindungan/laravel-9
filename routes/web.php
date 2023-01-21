@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\PusherTest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,5 +30,11 @@ Route::group(['middleware' => ['auth:web']], function () {
     Route::get('/intervention', function () {
         $img = Image::make('https://assets.infyom.com/logo/blue_logo_150x150.png')->resize(300, 200);
         return $img->response('jpg');
+    });
+
+    Route::get('/pusher-test', function () {
+        $name = request()->name;
+        echo $name;
+        event(new PusherTest($name));
     });
 });

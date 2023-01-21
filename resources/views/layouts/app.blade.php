@@ -11,6 +11,7 @@
 
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
+        @include('layouts.styles.css')
         @stack('page_css')
         @stack('third_party_stylesheets')
     </head>
@@ -33,6 +34,8 @@
         </div>
 
         <script src="{{ mix('js/app.js') }}"></script>
+        @include('layouts.scripts.pusher')
+        @include('layouts.scripts.js')
         @stack('page_scripts')
         @stack('third_party_scripts')
     </body>

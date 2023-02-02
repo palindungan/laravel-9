@@ -82,19 +82,6 @@
                 },
                 error: function(xhr, err, thrownError) {
                     $("textarea#result_text").val("terjadi kesalahan setting");
-
-                    var data = xhr.responseJSON;
-                    $.each(data.data, function(key, v) {
-                        form.find('input[name="' + v['var'] + '"]')
-                            .addClass('is-invalid')
-                            .after(`<div class="invalid-feedback float-start">` + v['msg'] + `</div>`);
-                        form.find('select[name="' + v['var'] + '"]')
-                            .addClass('is-invalid')
-                            .after(`<div class="invalid-feedback float-start">` + v['msg'] + `</div>`);
-                        form.find('textarea[name="' + v['var'] + '"]')
-                            .addClass('is-invalid')
-                            .after(`<div class="invalid-feedback float-start">` + v['msg'] + `</div>`);
-                    });
                 }
             });
         });

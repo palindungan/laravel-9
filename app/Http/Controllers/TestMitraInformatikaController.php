@@ -119,6 +119,8 @@ class TestMitraInformatikaController extends Controller
             }
 
             if ($int_val < 0) {
+                $int_val = abs($int_val);
+
                 $result_left = "";
                 foreach (str_split($result) as $key => $val) {
                     $current_key = @array_search($val, $char_array);

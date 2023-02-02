@@ -41,3 +41,4 @@ Route::group(['middleware' => ['auth:web']], function () {
 
 Route::get('test-example/soal1', [App\Http\Controllers\TestExampleController::class, 'soal1'])->name('testExample.soal1');
 Route::get('test-mitra-informatika/soal1', [App\Http\Controllers\TestMitraInformatikaController::class, 'soal1'])->name('testMitraInformatik.soal1');
+Route::post('test-mitra-informatika/hasilSoal1', [App\Http\Controllers\TestMitraInformatikaController::class, 'hasilSoal1'])->name('testMitraInformatik.hasilSoal1');

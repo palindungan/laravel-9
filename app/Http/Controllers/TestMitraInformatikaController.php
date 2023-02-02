@@ -22,6 +22,11 @@ class TestMitraInformatikaController extends Controller
      */
     public function soal1()
     {
-        return "init";
+        return view('test_mitra_informatika.soal1.index');
+    }
+
+    public function hasilSoal1()
+    {
+        return "hasil";
     }
 }

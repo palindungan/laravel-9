@@ -118,30 +118,27 @@ class TestMitraInformatikaController extends Controller
                 $result = $result_right;
             }
 
-            // if ($int_val < 0) {
-            //     $result_left = "";
-            //     foreach (str_split($result) as $key => $val) {
-            //         $current_key = @array_search($val, $char_array);
+            if ($int_val < 0) {
+                $result_left = "";
+                foreach (str_split($result) as $key => $val) {
+                    $current_key = @array_search($val, $char_array);
 
-            //         // 0 -> 5, 1 -> 6
-            //         if ($current_key >= 0 && $current_key <= 29) {
-            //             $left_key = abs($current_key - $int_val);
-            //             $result_left .= @$char_array[$left_key];
-            //         }
-
-            //         if ($current_key >= 30 && $current_key <= 39) {
-            //             // 38 -> 43(3) , 39 -> 44(4)
-            //             if ($current_key + $int_val > 39) {
-            //                 $left_key = abs($current_key + $int_val - 40);
-            //                 $result_left .= @$char_array[$left_key];
-            //             } else {
-            //                 $left_key = abs($current_key - $int_val);
-            //                 $result_left .= @$char_array[$left_key];
-            //             }
-            //         }
-            //     }
-            //     $result = $result_left;
-            // }
+                    // 0 -> 5, 1 -> 6
+                    if ($current_key >= 0 && $current_key <= 9) {
+                        if ($current_key - $int_val < 0) {
+                            $left_key = abs($current_key - $int_val);
+                            $result_left .= @$char_array[$left_key];
+                        } else {
+                            $left_key = abs($current_key - $int_val);
+                            $result_left .= @$char_array[$left_key];
+                        }
+                    } else {
+                        $left_key = abs($current_key - $int_val);
+                        $result_left .= @$char_array[$left_key];
+                    }
+                }
+                $result = $result_left;
+            }
         }
 
         return $result;

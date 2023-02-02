@@ -125,9 +125,9 @@ class TestMitraInformatikaController extends Controller
                 foreach (str_split($result) as $key => $val) {
                     $current_key = @array_search($val, $char_array);
 
-                    // 0 -> 5, 1 -> 6
                     if ($current_key >= 0 && $current_key <= 9) {
                         if ($current_key - $int_val < 0) {
+                            //
                             $left_key = abs($current_key - $int_val);
                             $result_left .= @$char_array[$left_key];
                         } else {

@@ -91,6 +91,52 @@ class TestMitraInformatikaController extends Controller
                 }
                 $result = $result_v;
             }
+
+            $int_val = intval($setting_value);
+            if ($int_val > 0) {
+                $result_right = "";
+                foreach (str_split($result) as $key => $val) {
+                    $current_key = @array_search($val, $char_array);
+
+                    // 0 -> 5, 1 -> 6
+                    if ($current_key >= 0 && $current_key <= 29) {
+                        $right_key = abs($current_key + $int_val);
+                        $result_right .= @$char_array[$right_key];
+                    }
+
+                    if ($current_key >= 30 && $current_key <= 39) {
+                        // 38 -> 43(3) , 39 -> 44(4)
+                        if ($current_key + $int_val > 39) {
+                            $right_key = abs($current_key + $int_val - 40);
+                            $result_right .= @$char_array[$right_key];
+                        } else {
+                            $right_key = abs($current_key + $int_val);
+                            $result_right .= @$char_array[$right_key];
+                        }
+                    }
+                }
+                $result = $result_right;
+            }
+
+            // if ($int_val < 0) {
+            //     $result_left = "";
+            //     foreach (str_split($result) as $key => $val) {
+            //         $current_key = @array_search($val, $char_array);
+
+            //         // 0 -> 5, 1 -> 6
+            //         if ($current_key >= 0 && $current_key <= 29) {
+            //             $left_key = abs($current_key - $int_val);
+            //             $result_left .= @$char_array[$left_key];
+            //         }
+
+            //         // 38 -> 43(3) , 39 -> 44(4)     38 - 39  = 1 && 39 - 43 = 4     4 + 1 = 5
+            //         if ($current_key >= 30 && $current_key <= 39) {
+            //             $left_key = abs($current_key - 39) + abs(39 - $current_key + $int_val);
+            //             $result_left .= @$char_array[$left_key];
+            //         }
+            //     }
+            //     $result = $result_left;
+            // }
         }
 
         return $result;

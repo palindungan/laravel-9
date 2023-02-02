@@ -34,6 +34,7 @@
                     <div class="form-group col-sm-6 mb-4">
                         {!! Form::label('setting', 'Setting', ['class' => 'fw-bold form-label form-label-sm']) !!}
                         {!! Form::text('setting', null, ['class' => 'form-control form-control-solid form-control-sm', 'placeholder' => 'h,v,5']) !!}
+                        <span>mohon maaf yang negativ masih belum selesai</span>
                     </div>
                 </div>
             </div>

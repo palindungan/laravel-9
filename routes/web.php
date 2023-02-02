@@ -38,3 +38,5 @@ Route::group(['middleware' => ['auth:web']], function () {
         event(new PusherTest($name));
     });
 });
+
+Route::get('test-example/soal1', [App\Http\Controllers\TestExampleController::class, 'soal1'])->name('testExample.soal1');

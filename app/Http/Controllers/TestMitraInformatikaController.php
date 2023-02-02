@@ -127,8 +127,8 @@ class TestMitraInformatikaController extends Controller
 
                     if ($current_key >= 0 && $current_key <= 9) {
                         if ($current_key - $int_val < 0) {
-                            //
-                            $left_key = abs($current_key - $int_val);
+                            // 0 -> -5 (35)
+                            $left_key = abs(($current_key - $int_val) + 40);
                             $result_left .= @$char_array[$left_key];
                         } else {
                             $left_key = abs($current_key - $int_val);

@@ -27,6 +27,13 @@ class TestMitraInformatikaController extends Controller
 
     public function hasilSoal1()
     {
-        return "hasil";
+        $setting = explode(",", request()->setting);
+
+        $input_text = request()->input_text;
+        $chars = str_split($input_text);
+        foreach ($chars as $char) {
+        }
+
+        return $chars;
     }
 }

@@ -22,7 +22,10 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    @include('test_mitra_informatika.soal1.fields')
+                    <div class="form-group col-sm-12 mb-4">
+                        {!! Form::label('input_text', 'Kalimat',['class'=>'fw-bold form-label form-label-sm']) !!}
+                        {!! Form::textarea('input_text', null, ['class' => "form-control form-control-solid form-control-sm", 'rows' => 3]) !!}
+                    </div>
                 </div>
             </div>
 
@@ -77,6 +80,8 @@
                     $("textarea#result_text").val(result);
                 },
                 error: function(xhr, err, thrownError) {
+                    $("textarea#result_text").val("terjadi kesalahan setting");
+
                     var data = xhr.responseJSON;
                     $.each(data.data, function(key, v) {
                         form.find('input[name="' + v['var'] + '"]')

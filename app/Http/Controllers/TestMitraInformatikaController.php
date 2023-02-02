@@ -27,13 +27,72 @@ class TestMitraInformatikaController extends Controller
 
     public function hasilSoal1()
     {
-        $setting = explode(",", request()->setting);
+        $char_array = [
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
+            "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
+            "a", "s", "d", "f", "g", "h", "j", "k", "l", ";",
+            "z", "x", "c", "v", "b", "n", "m", ",", ".", "/",
+        ];
+
+        // 1 10 -> 0 9
+        // 11 20 -> 10 19
+        // 21 30 -> 20 29
+        // 31 40 -> 30 39
 
         $input_text = request()->input_text;
-        $chars = str_split($input_text);
-        foreach ($chars as $char) {
+        $setting = explode(",", request()->setting);
+
+        $result = $input_text;
+        foreach ($setting as $setting_key => $setting_value) {
+            if ($setting_value == "h") {
+                $result_h = "";
+                foreach (str_split($result) as $key => $val) {
+                    $current_key = @array_search($val, $char_array);
+                    if ($current_key <= 5) {
+                        $h_key = abs(9 - $current_key); // 0 -> 9, 1 -> 8, 2 -> 7
+                        $result_h .= @$char_array[$h_key];
+                    } else {
+                        $h_key = abs($current_key - 9); // 9 -> 0, 8 -> 1, 7 -> 2
+                        $result_h .= @$char_array[$h_key];
+                    }
+                }
+                $result = $result_h;
+            }
+
+            if ($setting_value == "v") {
+                $result_v = "";
+                foreach (str_split($result) as $key => $val) {
+                    $current_key = @array_search($val, $char_array);
+
+                    // 0 -> 30, 1 -> 31 , 2 -> 32        +30
+                    // 10 -> 20, 11 -> 21, 12 -> 22      +10
+                    // 20 -> 10, 21 -> 11, 22 -> 12      -10
+                    // 30 -> 0, 31 -> 1, 32 -> 2         -30
+
+                    if ($current_key >= 0 && $current_key <= 9) {
+                        $h_key = abs($current_key + 30);
+                        $result_v .= @$char_array[$h_key];
+                    }
+
+                    if ($current_key >= 10 && $current_key <= 19) {
+                        $h_key = abs($current_key + 10);
+                        $result_v .= @$char_array[$h_key];
+                    }
+
+                    if ($current_key >= 20 && $current_key <= 29) {
+                        $h_key = abs($current_key - 10);
+                        $result_v .= @$char_array[$h_key];
+                    }
+
+                    if ($current_key >= 30 && $current_key <= 39) {
+                        $h_key = abs($current_key - 10);
+                        $result_v .= @$char_array[$h_key];
+                    }
+                }
+                $result = $result_v;
+            }
         }
 
-        return $chars;
+        return $result;
     }
 }

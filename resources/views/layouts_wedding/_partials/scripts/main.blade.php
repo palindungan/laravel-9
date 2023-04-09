@@ -23,7 +23,7 @@
 <script src="{{ asset('wedding-master/js/main.js') }}"></script>
 
 <script>
-    var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+    var d = new Date("2023-07-01");
 
     // default example
     simplyCountdown('.simply-countdown-one', {

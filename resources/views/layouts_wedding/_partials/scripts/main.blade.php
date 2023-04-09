@@ -1,17 +1,24 @@
 <!-- jQuery -->
 <script src="{{ asset('wedding-master/js/jquery.min.js') }}"></script>
+
 <!-- jQuery Easing -->
 <script src="{{ asset('wedding-master/js/jquery.easing.1.3.js') }}"></script>
+
 <!-- Bootstrap -->
 <script src="{{ asset('wedding-master/js/bootstrap.min.js') }}"></script>
+
 <!-- Waypoints -->
 <script src="{{ asset('wedding-master/js/jquery.waypoints.min.js') }}"></script>
+
 <!-- Carousel -->
 <script src="{{ asset('wedding-master/js/owl.carousel.min.js') }}"></script>
+
 <!-- countTo -->
 <script src="{{ asset('wedding-master/js/jquery.countTo.js') }}"></script>
+
 <!-- Stellar -->
 <script src="{{ asset('wedding-master/js/jquery.stellar.min.js') }}"></script>
+
 <!-- Magnific Popup -->
 <script src="{{ asset('wedding-master/js/jquery.magnific-popup.min.js') }}"></script>
 <script src="{{ asset('wedding-master/js/magnific-popup-options.js') }}"></script>

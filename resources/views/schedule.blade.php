@@ -16,8 +16,8 @@
                                 <h3>Resepsi Pernikahan</h3>
                                 <div class="event-col">
                                     <i class="icon-clock"></i>
-                                    <span>4:00 PM</span>
-                                    <span>6:00 PM</span>
+                                    <span>12:00</span>
+                                    <span>15:00</span>
                                 </div>
                                 <div class="event-col">
                                     <i class="icon-calendar"></i>

@@ -26,4 +26,6 @@
     @include('schedule')
 
     @include('prayer')
+
+    @include('gallery')
 @endsection

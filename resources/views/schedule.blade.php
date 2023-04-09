@@ -3,8 +3,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                <span>Our Special Events</span>
-                <h2>Wedding Events</h2>
+                <span>Acara Spesial</span>
+                <h2>Jadwal Acara</h2>
             </div>
         </div>
         <div class="row">
@@ -13,7 +13,7 @@
                     <div class="col-md-10 col-md-offset-1">
                         <div class="col-md-12 col-sm-12 text-center">
                             <div class="event-wrap animate-box">
-                                <h3>Main Ceremony</h3>
+                                <h3>Resepsi Pernikahan</h3>
                                 <div class="event-col">
                                     <i class="icon-clock"></i>
                                     <span>4:00 PM</span>

@@ -25,31 +25,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                    <h2>Hello!</h2>
-                    <h3>November 28th, 2016 New York, USA</h3>
-                    <p>We invited you to celebrate our wedding</p>
+                    <h2 style="font-size: 31px;">Assalamualaikum Warahmatullahi Wabarakatuh</h2>
+                    {{-- <h3>November 28th, 2016 New York, USA</h3> --}}
+                    <p>Kami mengundang Anda untuk merayakan pernikahan putra-putri kami</p>
                 </div>
             </div>
             <div class="couple-wrap animate-box">
-                <div class="couple-half">
-                    <div class="groom">
-                        <img src="{{ asset('wedding-master/images/groom.jpg') }}" alt="groom" class="img-responsive">
-                    </div>
-                    <div class="desc-groom">
-                        <h3>Joefrey Mahusay</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
-                            live the blind texts. Separated they live in Bookmarksgrove</p>
-                    </div>
-                </div>
-                <p class="heart text-center"><i class="icon-heart2"></i></p>
                 <div class="couple-half">
                     <div class="bride">
                         <img src="{{ asset('wedding-master/images/bride.jpg') }}" alt="groom" class="img-responsive">
                     </div>
                     <div class="desc-bride">
-                        <h3>Sheila Mahusay</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
-                            live the blind texts. Separated they live in Bookmarksgrove</p>
+                        <h3>drh. Salsabila Qutrotu ain, S.KH</h3>
+                        <p>Putri dari Bapak Sigit Permono dan Ibu Cipuk Pangestu</p>
+                    </div>
+                </div>
+                <p class="heart text-center"><i class="icon-heart2"></i></p>
+                <div class="couple-half">
+                    <div class="groom">
+                        <img src="{{ asset('wedding-master/images/groom.jpg') }}" alt="groom" class="img-responsive">
+                    </div>
+                    <div class="desc-groom">
+                        <h3>Rizkika Zakka Palindungan, S.Tr.Kom</h3>
+                        <p>Putra dari Bapak Sudardi dan Ibu Suheni</p>
                     </div>
                 </div>
             </div>

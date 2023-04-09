@@ -28,4 +28,6 @@
     @include('prayer')
 
     @include('gallery')
+
+    @include('gift')
 @endsection

@@ -1,5 +1,7 @@
 pop up pemberitahuan kepada yang diundang
 
+/////
+
 waktu counter
 
 ucapan doa
@@ -8,10 +10,18 @@ jadwal acara
 
 informasi
 
+/////
+
 galery
+
+/////
 
 hadiah
 
+/////
+
 kirim ucapan
+
+/////
 
 list

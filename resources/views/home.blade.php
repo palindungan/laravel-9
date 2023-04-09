@@ -32,20 +32,20 @@
             </div>
             <div class="couple-wrap animate-box">
                 <div class="couple-half">
-                    <div class="bride">
+                    <div class="groom">
                         <img src="{{ asset('wedding-master/images/bride.jpg') }}" alt="groom" class="img-responsive">
                     </div>
-                    <div class="desc-bride">
+                    <div class="desc-groom">
                         <h3>drh. Salsabila Qutrotu ain, S.KH</h3>
                         <p>Putri dari Bapak Sigit Permono dan Ibu Cipuk Pangestu</p>
                     </div>
                 </div>
                 <p class="heart text-center"><i class="icon-heart2"></i></p>
                 <div class="couple-half">
-                    <div class="groom">
+                    <div class="bride">
                         <img src="{{ asset('wedding-master/images/groom.jpg') }}" alt="groom" class="img-responsive">
                     </div>
-                    <div class="desc-groom">
+                    <div class="desc-bride">
                         <h3>Rizkika Zakka Palindungan, S.Tr.Kom</h3>
                         <p>Putra dari Bapak Sudardi dan Ibu Suheni</p>
                     </div>

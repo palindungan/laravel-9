@@ -23,20 +23,22 @@
 <script src="{{ asset('wedding-master/js/main.js') }}"></script>
 
 <script>
-    var d = new Date("2023-07-01");
+    var d = new Date("2023-07-01 12:00:00");
+
+    console.log(d.getFullYear() + ","
+    + (d.getMonth() + 1) + ","
+    + d.getDate() + ","
+    + d.getHours() + ","
+    + d.getMinutes() + ","
+    + d.getSeconds() + ",");
 
     // default example
     simplyCountdown('.simply-countdown-one', {
         year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate()
-    });
-
-    //jQuery example
-    $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
+        month: (d.getMonth() + 1),
         day: d.getDate(),
-        enableUtc: false
+        hours: d.getHours(), // Default is 0 [0-23] integer
+        minutes: d.getMinutes(), // Default is 0 [0-59] integer
+        seconds: d.getSeconds(), // Default is 0 [0-59] integer
     });
 </script>

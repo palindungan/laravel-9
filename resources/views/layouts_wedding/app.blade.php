@@ -3,6 +3,7 @@
 
 <head>
     @include('layouts_wedding._partials.head')
+    @include('layouts_wedding._partials.styles.css')
     @stack('page_css')
     @stack('third_party_stylesheets')
 </head>
@@ -11,7 +12,7 @@
     <div class="fh5co-loader"></div>
 
     <div id="page">
-        @include('layouts_wedding._partials.navigation')
+        {{-- @include('layouts_wedding._partials.navigation') --}}
 
         @yield('content')
 

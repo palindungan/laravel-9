@@ -21,12 +21,11 @@
                                 </div>
                                 <div class="event-col">
                                     <i class="icon-calendar"></i>
-                                    <span>Monday 28</span>
-                                    <span>November, 2016</span>
+                                    <span>Saptu 1</span>
+                                    <span>Juli, 2023</span>
                                 </div>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                                    Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
-                                    at the coast of the Semantics, a large language ocean.</p>
+                                <p style="margin-bottom: 0px;">Gedung Guru Lumajang</p>
+                                <p>Jl. Veteran No.18, Kepuharjo, Kec. Lumajang, Kabupaten Lumajang, Jawa Timur 67316</p>
                             </div>
                         </div>
                     </div>

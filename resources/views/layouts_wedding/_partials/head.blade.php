@@ -6,6 +6,8 @@
 <meta name="keywords" content="undangan, pernikahan" />
 <meta name="author" content="Rizkika Zakka Palindungan" />
 
+<link rel="icon" type="image/x-icon" href="{{ asset('wedding/icons/logo_circle_32.png') }}">
+
 <!-- Facebook and Twitter integration -->
 <meta property="og:title" content="" />
 <meta property="og:image" content="" />

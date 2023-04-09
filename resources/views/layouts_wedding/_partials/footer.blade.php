@@ -19,7 +19,7 @@
                     <div class="col-md-4 col-sm-4">
                         <div class="form-group">
                             <label for="text" class="sr-only">Ucapan</label>
-                            <input type="text" class="form-control" id="text" placeholder="Harapan, Ucapan dan Doa">
+                            <input type="text" class="form-control" id="text" placeholder="Ucapan">
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4">

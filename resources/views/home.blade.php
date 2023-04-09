@@ -23,5 +23,7 @@
 
     @include('couple')
 
+    @include('schedule')
+
     @include('prayer')
 @endsection

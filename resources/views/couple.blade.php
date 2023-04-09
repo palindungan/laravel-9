@@ -4,7 +4,7 @@
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
                 <h2 style="font-size: 31px;">Assalamualaikum Warahmatullahi Wabarakatuh</h2>
                 {{-- <h3>November 28th, 2016 New York, USA</h3> --}}
-                <p>Kami mengundang Anda untuk merayakan pernikahan putra-putri kami</p>
+                <p>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri resepsi pernikahan Putra-Putri Kami</p>
             </div>
         </div>
         <div class="couple-wrap animate-box">

@@ -22,4 +22,6 @@
     </header>
 
     @include('couple')
+
+    @include('prayer')
 @endsection

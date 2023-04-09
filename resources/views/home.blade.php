@@ -1,7 +1,5 @@
-@extends('layouts.app')
+@extends('layouts_wedding.app')
 
 @section('content')
-    <div class="container-fluid">
-        <h1 class="text-black-50">You are logged in!</h1>
-    </div>
+    <h1>init</h1>
 @endsection

@@ -10,7 +10,6 @@
 <script src="{{ asset('wedding-master/js/owl.carousel.min.js') }}"></script>
 <!-- countTo -->
 <script src="{{ asset('wedding-master/js/jquery.countTo.js') }}"></script>
-
 <!-- Stellar -->
 <script src="{{ asset('wedding-master/js/jquery.stellar.min.js') }}"></script>
 <!-- Magnific Popup -->
@@ -18,7 +17,10 @@
 <script src="{{ asset('wedding-master/js/magnific-popup-options.js') }}"></script>
 
 <!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
-<script src="{{ asset('wedding-master/js/simplyCountdown.js') }}"></script>
+
+{{-- <script src="{{ asset('wedding-master/js/simplyCountdown.js') }}"></script> --}}
+<script src="{{ asset('simplyCountdown/dev/simplyCountdown.js') }}"></script>
+
 <!-- Main -->
 <script src="{{ asset('wedding-master/js/main.js') }}"></script>
 

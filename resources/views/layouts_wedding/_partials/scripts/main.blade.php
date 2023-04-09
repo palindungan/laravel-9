@@ -42,5 +42,11 @@
         hours: d.getHours(), // Default is 0 [0-23] integer
         minutes: d.getMinutes(), // Default is 0 [0-59] integer
         seconds: d.getSeconds(), // Default is 0 [0-59] integer
+        words: { //words displayed into the countdown
+            days: { singular: 'day', plural: 'hari' },
+            hours: { singular: 'hour', plural: 'jam' },
+            minutes: { singular: 'minute', plural: 'menit' },
+            seconds: { singular: 'second', plural: 'detik' }
+        }
     });
 </script>

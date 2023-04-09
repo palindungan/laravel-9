@@ -9,7 +9,7 @@
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <div class="display-t" style="height: 600px;">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn" style="height: 600px;">
-                            <h2 style="margin-bottom: 0px;">THE WEDDING OF</h2>
+                            <h2 style="margin-bottom: 0px;">PERNIKAHAN DARI</h2>
                             <h1 style="margin-bottom: 30px;">Salsa &amp; Rizki</h1>
                             <div class="simply-countdown simply-countdown-one"></div>
                             <h2 style="margin-bottom: 0px;">01.07.23</h2>

@@ -44,13 +44,21 @@
         </a>
     </li>
 
-        <!-- Nav Item - Acara -->
-        <li class="nav-item {{ Request::is('backend/events*') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('events.index') }}">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Acara</span>
-            </a>
-        </li>
+    <!-- Nav Item - Acara -->
+    <li class="nav-item {{ Request::is('backend/events*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('events.index') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Acara</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Galeri Foto -->
+    <li class="nav-item {{ Request::is('backend/photoGalleries*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('photoGalleries.index') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Galeri Foto</span>
+        </a>
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

@@ -18,4 +18,5 @@ Route::prefix('backend')->group(function() {
     Route::resource('greetings', GreetingController::class);
     Route::resource('weddings', WeddingController::class);
     Route::resource('events', EventController::class);
+    Route::resource('photoGalleries', PhotoGalleryController::class);
 });

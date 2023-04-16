@@ -28,6 +28,14 @@
         </a>
     </li>
 
+    <!-- Nav Item - Ucapan -->
+    <li class="nav-item {{ Request::is('backend/greetings*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('greetings.index') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Ucapan</span>
+        </a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

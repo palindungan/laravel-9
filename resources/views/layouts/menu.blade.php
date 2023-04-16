@@ -9,13 +9,13 @@
 <li class="nav-item">
     <a href="{{ route('admins.index') }}" class="nav-link {{ Request::is('admins*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-home"></i>
-        <p>Admins</p>
+        <p>Mempelai</p>
     </a>
 </li>  --}}
 
 <li class="nav-item">
     <a href="{{ route('admins.index') }}" class="nav-link {{ Request::is('admins*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-home"></i>
-        <p>Admins</p>
+        <p>Mempelai</p>
     </a>
 </li>

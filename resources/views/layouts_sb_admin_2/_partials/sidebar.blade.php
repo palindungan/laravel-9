@@ -20,6 +20,14 @@
         </a>
     </li>
 
+    <!-- Nav Item - Pengaturan -->
+    <li class="nav-item {{ Request::is('backend/settings*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('settings.index') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Pengaturan</span>
+        </a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

@@ -12,7 +12,7 @@
 */
 
 Route::prefix('backend')->group(function() {
-    Route::get('/', 'BackendController@index');
+    // Route::get('/', 'BackendController@index');
     Route::resource('admins', AdminController::class);
     Route::resource('settings', SettingController::class);
     Route::resource('greetings', GreetingController::class);

@@ -14,7 +14,12 @@ class AdminRepository extends BaseRepository
         'password',
         'remember_token',
         'photo',
-        'attachment'
+        'attachment',
+        'name_short',
+        'name_degree_first',
+        'name_degree_last',
+        'name_parent_male',
+        'name_parent_female'
     ];
 
     public function getFieldsSearchable(): array

@@ -49,11 +49,11 @@ class AdminDataTable extends DataTable
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                     // Enable Buttons as per your need
-                    // ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
-                    // ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'reload', 'className' => 'btn btn-default btn-sm no-corner',],
+//                    ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
+//                    ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
+//                    ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
+//                    ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
+//                    ['extend' => 'reload', 'className' => 'btn btn-default btn-sm no-corner',],
                 ],
             ]);
     }
@@ -72,7 +72,12 @@ class AdminDataTable extends DataTable
             'password',
             'remember_token',
             'photo',
-            'attachment'
+            'attachment',
+            'name_short',
+            'name_degree_first',
+            'name_degree_last',
+            'name_parent_male',
+            'name_parent_female'
         ];
     }
 

@@ -14,8 +14,8 @@
 </li>  --}}
 
 <li class="nav-item">
-    <a href="{{ url('test-mitra-informatika/soal1') }}" class="nav-link {{ Request::is('test-mitra-informatika*') ? 'active' : '' }}">
+    <a href="{{ route('admins.index') }}" class="nav-link {{ Request::is('admins*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-home"></i>
-        <p>Soal 1</p>
+        <p>Admins</p>
     </a>
-</li> 
+</li>

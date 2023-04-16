@@ -5,6 +5,10 @@
     {{-- Head --}}
     @include('layouts_sb_admin_2._partials.head')
     {{-- End of Head --}}
+
+    @include('layouts.styles.css')
+    @stack('page_css')
+    @stack('third_party_stylesheets')
 </head>
 
 <body id="page-top">
@@ -120,6 +124,11 @@
     </div>
 
     @include('layouts_sb_admin_2._partials.scripts.main')
+
+    {{-- @include('layouts.scripts.pusher') --}}
+    @include('layouts.scripts.js')
+    @stack('page_scripts')
+    @stack('third_party_scripts')
 
 </body>
 

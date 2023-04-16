@@ -12,11 +12,11 @@
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
-    <!-- Nav Item - Administrator -->
+    <!-- Nav Item - Admin / Mempelai -->
     <li class="nav-item {{ Request::is('backend/admins*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('admins.index') }}">
             <i class="fas fa-fw fa-user"></i>
-            <span>Administrator</span>
+            <span>Admin / Mempelai</span>
         </a>
     </li>
 

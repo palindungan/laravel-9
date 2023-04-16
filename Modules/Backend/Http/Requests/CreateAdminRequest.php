@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Modules\Backend\Http\Requests;
 
 use App\Models\Admin;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateAdminRequest extends FormRequest
+class CreateAdminRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,6 @@ class UpdateAdminRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = Admin::$rules;
-        
-        return $rules;
+        return Admin::$rules;
     }
 }

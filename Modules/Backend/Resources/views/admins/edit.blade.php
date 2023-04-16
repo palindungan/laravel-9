@@ -23,7 +23,7 @@
 
             <div class="card-body">
                 <div class="row">
-                    @include('admins.fields')
+                    @include('backend::admins.fields')
                 </div>
             </div>
 

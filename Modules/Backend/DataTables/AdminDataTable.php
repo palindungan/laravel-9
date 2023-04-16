@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DataTables;
+namespace Modules\Backend\DataTables;
 
 use App\Models\Admin;
 use Yajra\DataTables\Services\DataTable;
@@ -18,7 +18,7 @@ class AdminDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'admins.datatables_actions');
+        return $dataTable->addColumn('action', 'backend::admins.datatables_actions');
     }
 
     /**
@@ -68,16 +68,7 @@ class AdminDataTable extends DataTable
         return [
             'name',
             'email',
-            'email_verified_at',
-            'password',
-            'remember_token',
             'photo',
-            'attachment',
-            'name_short',
-            'name_degree_first',
-            'name_degree_last',
-            'name_parent_male',
-            'name_parent_female'
         ];
     }
 

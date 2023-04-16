@@ -24,7 +24,7 @@
         <div class="clearfix"></div>
 
         <div class="card">
-            @include('admins.table')
+            @include('backend::admins.table')
         </div>
     </div>
 

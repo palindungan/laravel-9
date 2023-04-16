@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Modules\Backend\Http\Controllers;
 
-use App\DataTables\AdminDataTable;
-use App\Http\Requests\CreateAdminRequest;
-use App\Http\Requests\UpdateAdminRequest;
+use Modules\Backend\DataTables\AdminDataTable;
+use Modules\Backend\Http\Requests\CreateAdminRequest;
+use Modules\Backend\Http\Requests\UpdateAdminRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\AdminRepository;
 use Illuminate\Http\Request;
@@ -25,7 +25,7 @@ class AdminController extends AppBaseController
      */
     public function index(AdminDataTable $adminDataTable)
     {
-    return $adminDataTable->render('admins.index');
+    return $adminDataTable->render('backend::admins.index');
     }
 
 
@@ -34,7 +34,7 @@ class AdminController extends AppBaseController
      */
     public function create()
     {
-        return view('admins.create');
+        return view('backend::admins.create');
     }
 
     /**
@@ -64,7 +64,7 @@ class AdminController extends AppBaseController
             return redirect(route('admins.index'));
         }
 
-        return view('admins.show')->with('admin', $admin);
+        return view('backend::admins.show')->with('admin', $admin);
     }
 
     /**
@@ -80,7 +80,7 @@ class AdminController extends AppBaseController
             return redirect(route('admins.index'));
         }
 
-        return view('admins.edit')->with('admin', $admin);
+        return view('backend::admins.edit')->with('admin', $admin);
     }
 
     /**

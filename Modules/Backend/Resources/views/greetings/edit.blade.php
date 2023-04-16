@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1>
-                        Edit Greeting
+                        Edit Ucapan
                     </h1>
                 </div>
             </div>

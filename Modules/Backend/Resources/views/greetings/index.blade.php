@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Greetings</h1>
+                    <h1>Ucapan</h1>
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"

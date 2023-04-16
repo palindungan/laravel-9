@@ -7,8 +7,12 @@
                 <p><img style="width: 200px;" src="{{ asset('wedding/logos/Bank_Mandiri_logo_2016.svg') }}" alt="Logo Bank Mandiri"/></p>
                 <p><img src="{{ asset('wedding/images/qrcode_bank_mandiri_150.png') }}" alt="Rekening Bank Mandiri"/></p>
                 <p style="">a.n Salsabila Qutrotu'ain</p>
-                <p><span href="#" class="btn btn-info btn-sm">1430023634155</span></p>
-                <p><a href="#" class="btn btn-default btn-sm">Copy Rekening</a></p>
+                <p>
+                    <input type="text" class="btn btn-info btn-sm" readonly value="1430023634155">
+                </p>
+                <p>
+                    <button class="btn btn-default btn-sm">Copy Rekening</button>
+                </p>
             </div>
         </div>
     </div>

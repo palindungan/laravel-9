@@ -44,6 +44,14 @@
         </a>
     </li>
 
+        <!-- Nav Item - Acara -->
+        <li class="nav-item {{ Request::is('backend/events*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('events.index') }}">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Acara</span>
+            </a>
+        </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

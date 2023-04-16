@@ -16,4 +16,5 @@ Route::prefix('backend')->group(function() {
     Route::resource('admins', AdminController::class);
     Route::resource('settings', SettingController::class);
     Route::resource('greetings', GreetingController::class);
+    Route::resource('weddings', WeddingController::class);
 });

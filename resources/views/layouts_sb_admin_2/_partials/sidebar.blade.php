@@ -36,6 +36,14 @@
         </a>
     </li>
 
+    <!-- Nav Item - Pernikahan -->
+    <li class="nav-item {{ Request::is('backend/weddings*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('weddings.index') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Pernikahan</span>
+        </a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

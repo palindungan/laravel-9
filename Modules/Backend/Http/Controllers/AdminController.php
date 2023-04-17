@@ -25,7 +25,7 @@ class AdminController extends AppBaseController
      */
     public function index(AdminDataTable $adminDataTable)
     {
-    return $adminDataTable->render('backend::admins.index');
+        return $adminDataTable->render('backend::admins.index');
     }
 
 

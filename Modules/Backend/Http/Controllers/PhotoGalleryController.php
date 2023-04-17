@@ -25,7 +25,7 @@ class PhotoGalleryController extends AppBaseController
      */
     public function index(PhotoGalleryDataTable $photoGalleryDataTable)
     {
-    return $photoGalleryDataTable->render('backend::photo_galleries.index');
+        return $photoGalleryDataTable->render('backend::photo_galleries.index');
     }
 
 

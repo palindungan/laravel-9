@@ -25,7 +25,7 @@ class GreetingController extends AppBaseController
      */
     public function index(GreetingDataTable $greetingDataTable)
     {
-    return $greetingDataTable->render('backend::greetings.index');
+        return $greetingDataTable->render('backend::greetings.index');
     }
 
 

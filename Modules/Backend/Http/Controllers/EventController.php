@@ -25,7 +25,7 @@ class EventController extends AppBaseController
      */
     public function index(EventDataTable $eventDataTable)
     {
-    return $eventDataTable->render('backend::events.index');
+        return $eventDataTable->render('backend::events.index');
     }
 
 

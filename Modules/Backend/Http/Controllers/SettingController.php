@@ -25,7 +25,7 @@ class SettingController extends AppBaseController
      */
     public function index(SettingDataTable $settingDataTable)
     {
-    return $settingDataTable->render('backend::settings.index');
+        return $settingDataTable->render('backend::settings.index');
     }
 
 

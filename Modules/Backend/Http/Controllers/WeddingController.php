@@ -25,7 +25,7 @@ class WeddingController extends AppBaseController
      */
     public function index(WeddingDataTable $weddingDataTable)
     {
-    return $weddingDataTable->render('backend::weddings.index');
+        return $weddingDataTable->render('backend::weddings.index');
     }
 
 

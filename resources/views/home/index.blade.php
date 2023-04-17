@@ -21,13 +21,13 @@
         </div>
     </header>
 
-    @include('couple')
+    @include('home.couple')
 
-    @include('schedule')
+    @include('home.schedule')
 
-    @include('prayer')
+    @include('home.prayer')
 
-    @include('gallery')
+    @include('home.gallery')
 
-    @include('gift')
+    @include('home.gift')
 @endsection

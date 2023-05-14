@@ -18,7 +18,12 @@ class AdminDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'backend::admins.datatables_actions');
+        return $dataTable
+            ->editColumn('photo', function($row) {
+                return '<img src="' . $row->photo_thumbnail . '" alt="photo" class="img-thumbnail img-thumbnail-photo" style="max-height: 200px;">';
+            })
+            ->addColumn('action', 'backend::admins.datatables_actions')
+            ->rawColumns(['photo', 'action']);
     }
 
     /**
@@ -67,7 +72,7 @@ class AdminDataTable extends DataTable
     {
         return [
             ['name' => 'name', 'title' => 'Nama Lengkap', 'data' => 'name'],
-            ['name' => 'photo', 'title' => 'Foto', 'data' => 'photo_thumbnail'],
+            ['name' => 'photo', 'title' => 'Foto', 'data' => 'photo'],
         ];
     }
 

@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Repositories\AdminRepository;
 use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends AppBaseController
 {
@@ -43,6 +44,9 @@ class AdminController extends AppBaseController
     public function store(CreateAdminRequest $request)
     {
         $input = $request->all();
+
+        $update_media = $this->updateMedia([], $request);
+        $input['photo'] = $update_media['photo'];
 
         $admin = $this->adminRepository->create($input);
 
@@ -96,7 +100,12 @@ class AdminController extends AppBaseController
             return redirect(route('admins.index'));
         }
 
-        $admin = $this->adminRepository->update($request->all(), $id);
+        $input = $request->all();
+
+        $update_media = $this->updateMedia(["admin" => $admin], $request);
+        $input['photo'] = $update_media['photo'];
+
+        $admin = $this->adminRepository->update($input, $id);
 
         Flash::success('Admin updated successfully.');
 
@@ -123,5 +132,33 @@ class AdminController extends AppBaseController
         Flash::success('Admin deleted successfully.');
 
         return redirect(route('admins.index'));
+    }
+
+    public function updateMedia($param = [], $request = null)
+    {
+        // photo
+        $input['photo'] = @$param['admin']->photo;
+        if ($request->hasFile('photo')) {
+            // delete old image
+            if (!empty($input['photo'])) {
+                if (Storage::disk('admins')->exists($input['photo'])) {
+                    Storage::disk('admins')->delete($input['photo']);
+                }
+            }
+
+            $file = $request->file('photo');
+            $name_file = $file->getClientOriginalName();
+            $custom_name_file = 'photo' . 'f' . time() . '.' . $file->extension();
+
+            $ori = $file->storeAs(
+                date('Ym'),
+                $custom_name_file,
+                'admins'
+            );
+
+            $input['photo'] = $ori;
+        }
+
+        return $input;
     }
 }

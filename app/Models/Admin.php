@@ -46,7 +46,7 @@ class Admin extends Model
         'remember_token' => 'nullable|string|max:100',
         'created_at' => 'nullable',
         'updated_at' => 'nullable',
-        'photo' => 'nullable|string|max:255',
+        'photo' => 'nullable|image',
         'attachment' => 'nullable|string|max:255',
         'name_short' => 'required|string|max:255',
         'name_degree_first' => 'nullable|string|max:255',

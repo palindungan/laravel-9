@@ -69,6 +69,13 @@ return [
             'url' => env('APP_URL') . '/storage/media',
             'visibility' => 'public',
         ],
+
+        'admins' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/admins'),
+            'url' => env('APP_URL') . '/storage/admins',
+            'visibility' => 'public',
+        ],
     ],
 
     /*

@@ -43,7 +43,8 @@
 <!-- Photo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('photo', 'Foto:') !!}
-    {!! Form::text('photo', null, ['class' => 'form-control', 'maxlength' => 255, 'maxlength' => 255]) !!}
+    {!! Form::file('photo', ['class' => 'form-control', 'accept' => 'image/*']) !!}
+    <img src="{{ asset('image-not-found.jpg') }}" alt="photo" class="img-thumbnail" style="max-height: 200px;">
 </div>
 
 {{-- <!-- Attachment Field -->

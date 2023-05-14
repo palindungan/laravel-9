@@ -30,7 +30,7 @@
             </div>
 
             <div class="card-footer">
-                {!! Form::submit('Simpan', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Simpan', ['class' => 'btn btn-primary btn-submit']) !!}
                 <a href="{{ route('admins.index') }}" class="btn btn-default"> Kembali </a>
             </div>
 

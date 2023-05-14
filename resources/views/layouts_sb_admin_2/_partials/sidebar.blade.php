@@ -20,35 +20,11 @@
         </a>
     </li>
 
-    <!-- Nav Item - Pengaturan -->
-    <li class="nav-item {{ Request::is('backend/settings*') ? 'active' : '' }}">
-        <a class="nav-link" href="{{ route('settings.index') }}">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Pengaturan</span>
-        </a>
-    </li>
-
-    <!-- Nav Item - Ucapan -->
-    <li class="nav-item {{ Request::is('backend/greetings*') ? 'active' : '' }}">
-        <a class="nav-link" href="{{ route('greetings.index') }}">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Ucapan</span>
-        </a>
-    </li>
-
     <!-- Nav Item - Pernikahan -->
     <li class="nav-item {{ Request::is('backend/weddings*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('weddings.index') }}">
             <i class="fas fa-fw fa-cog"></i>
             <span>Pernikahan</span>
-        </a>
-    </li>
-
-    <!-- Nav Item - Acara -->
-    <li class="nav-item {{ Request::is('backend/events*') ? 'active' : '' }}">
-        <a class="nav-link" href="{{ route('events.index') }}">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Acara</span>
         </a>
     </li>
 
@@ -65,6 +41,22 @@
         <a class="nav-link" href="{{ route('guests.index') }}">
             <i class="fas fa-fw fa-cog"></i>
             <span>Tamu Undangan</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Ucapan -->
+    <li class="nav-item {{ Request::is('backend/greetings*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('greetings.index') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Ucapan</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Pengaturan -->
+    <li class="nav-item {{ Request::is('backend/settings*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('settings.index') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Pengaturan</span>
         </a>
     </li>
 

@@ -1,7 +1,7 @@
-<!-- Name Field -->
+<!-- Guest Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('name', 'Name:') !!}
-    {!! Form::text('name', null, ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!}
+    {!! Form::label('guest_id', 'Guest Id:') !!}
+    {!! Form::number('guest_id', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Greet Field -->

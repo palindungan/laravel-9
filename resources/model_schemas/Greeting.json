@@ -12,10 +12,10 @@
         "inView": false
     },
     {
-        "name": "name",
-        "dbType": "string",
-        "htmlType": "text",
-        "validations": "required|string|max:255|string|max:255",
+        "name": "guest_id",
+        "dbType": "integer,false",
+        "htmlType": "number",
+        "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,

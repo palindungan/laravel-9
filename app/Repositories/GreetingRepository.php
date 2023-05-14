@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 class GreetingRepository extends BaseRepository
 {
     protected $fieldSearchable = [
-        'name',
+        'guest_id',
         'greet'
     ];
 

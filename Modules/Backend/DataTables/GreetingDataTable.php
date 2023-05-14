@@ -66,7 +66,7 @@ class GreetingDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name',
+            'guest_id',
             'greet'
         ];
     }

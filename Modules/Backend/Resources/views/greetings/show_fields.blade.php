@@ -1,7 +1,7 @@
-<!-- Name Field -->
+<!-- Guest Id Field -->
 <div class="col-sm-12">
-    {!! Form::label('name', 'Name:') !!}
-    <p>{{ $greeting->name }}</p>
+    {!! Form::label('guest_id', 'Guest Id:') !!}
+    <p>{{ $greeting->guest_id }}</p>
 </div>
 
 <!-- Greet Field -->

@@ -9,17 +9,16 @@ class Greeting extends Model
     public $table = 'greetings';
 
     public $fillable = [
-        'name',
+        'guest_id',
         'greet'
     ];
 
     protected $casts = [
-        'name' => 'string',
         'greet' => 'string'
     ];
 
     public static array $rules = [
-        'name' => 'required|string|max:255',
+        'guest_id' => 'required',
         'greet' => 'required|string|max:65535',
         'created_at' => 'nullable',
         'updated_at' => 'nullable'

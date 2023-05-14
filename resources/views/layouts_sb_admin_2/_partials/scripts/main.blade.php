@@ -8,6 +8,11 @@
 <!-- Custom scripts for all pages-->
 <script src="{{ asset('sb-admin-2/js/sb-admin-2.min.js') }}"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
 <script>
     function btnSubmitDisabled() {
         console.log('disabled');
@@ -33,5 +38,13 @@
                 reader.readAsDataURL(file);
             }
         });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('.select2').select2();
+
+        $('.datetimepicker').datetimepicker();
     });
 </script>

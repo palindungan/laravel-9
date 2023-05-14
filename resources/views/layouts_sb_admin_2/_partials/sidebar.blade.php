@@ -60,6 +60,14 @@
         </a>
     </li>
 
+    <!-- Nav Item - Tamu Undangan -->
+    <li class="nav-item {{ Request::is('backend/guests*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('guests.index') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Tamu Undangan</span>
+        </a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

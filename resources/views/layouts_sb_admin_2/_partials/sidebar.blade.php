@@ -20,6 +20,14 @@
         </a>
     </li>
 
+    <!-- Nav Item - Acara -->
+    <li class="nav-item {{ Request::is('backend/events*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('events.index') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Acara</span>
+        </a>
+    </li>
+
     <!-- Nav Item - Pernikahan -->
     <li class="nav-item {{ Request::is('backend/weddings*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('weddings.index') }}">

@@ -127,6 +127,12 @@ class AdminController extends AppBaseController
             return redirect(route('admins.index'));
         }
 
+        if (!empty($admin->photo)) {
+            if (Storage::disk('admins')->exists($admin->photo)) {
+                Storage::disk('admins')->delete($admin->photo);
+            }
+        }
+
         $this->adminRepository->delete($id);
 
         Flash::success('Admin deleted successfully.');

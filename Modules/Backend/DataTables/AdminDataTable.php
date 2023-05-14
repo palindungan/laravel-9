@@ -66,9 +66,8 @@ class AdminDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name',
-            'email',
-            'photo',
+            ['name' => 'name', 'title' => 'Nama Lengkap', 'data' => 'name'],
+            ['name' => 'photo', 'title' => 'Foto', 'data' => 'photo'],
         ];
     }
 

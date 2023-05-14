@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Admin extends Model
 {
@@ -55,5 +56,12 @@ class Admin extends Model
         'name_parent_female' => 'nullable|string|max:255'
     ];
 
-    
+    protected $appends = ['photo_thumbnail'];
+    public function getPhotoThumbnailAttribute()
+    {
+        if (empty($this->photo)) {
+            return asset('image-not-found.jpg');
+        }
+        return asset(Storage::url("admins/" . $this->photo));
+    }
 }

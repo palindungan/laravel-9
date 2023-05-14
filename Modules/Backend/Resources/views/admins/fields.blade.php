@@ -86,12 +86,3 @@
     {!! Form::label('name_parent_female', 'Nama Ibu:') !!}
     {!! Form::text('name_parent_female', null, ['class' => 'form-control', 'maxlength' => 255, 'maxlength' => 255]) !!}
 </div>
-
-<script>
-    $(document).ready(function() {
-        $('.btn-submit').prop('disabled', true);
-        setTimeout(function() {
-            $('.btn-submit').prop('disabled', false);
-        }, 10000);
-    });
-</script>

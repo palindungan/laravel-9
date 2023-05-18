@@ -18,7 +18,11 @@ class EventDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'backend::events.datatables_actions');
+        return $dataTable
+            ->editColumn('date_start', function($row) {
+                return !empty($row->date_start) ? $row->date_start->format('Y-m-d h:i') : '-';
+            })
+            ->addColumn('action', 'backend::events.datatables_actions');
     }
 
     /**
@@ -66,13 +70,10 @@ class EventDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name',
-            'date_start',
-            'date_end',
-            'time_start',
-            'time_end',
-            'place',
-            'address'
+            ['name' => 'name', 'title' => 'Nama Acara', 'data' => 'name'],
+            ['name' => 'date_start', 'title' => 'Tanggal Mulai', 'data' => 'date_start'],
+            ['name' => 'place', 'title' => 'Tempat', 'data' => 'place'],
+            ['name' => 'address', 'title' => 'Alamat', 'data' => 'address'],
         ];
     }
 

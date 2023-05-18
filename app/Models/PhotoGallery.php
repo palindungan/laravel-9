@@ -18,7 +18,7 @@ class PhotoGallery extends Model
     ];
 
     public static array $rules = [
-        'photo' => 'required|image',
+        'photo' => 'nullable|image',
         'created_at' => 'nullable',
         'updated_at' => 'nullable'
     ];

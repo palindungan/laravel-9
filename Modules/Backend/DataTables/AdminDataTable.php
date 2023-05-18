@@ -72,7 +72,7 @@ class AdminDataTable extends DataTable
     {
         return [
             ['name' => 'name', 'title' => 'Nama Lengkap', 'data' => 'name'],
-            ['name' => 'photo', 'title' => 'Foto', 'data' => 'photo'],
+            ['name' => 'photo', 'title' => 'Foto', 'data' => 'photo', 'searchable' => false],
         ];
     }
 

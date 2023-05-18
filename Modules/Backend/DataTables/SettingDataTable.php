@@ -66,9 +66,9 @@ class SettingDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'code',
-            'name',
-            'value'
+            ['name' => 'code', 'title' => 'Kode', 'data' => 'code'],
+            ['name' => 'name', 'title' => 'Nama', 'data' => 'name'],
+            ['name' => 'value', 'title' => 'Nilai', 'data' => 'value'],
         ];
     }
 

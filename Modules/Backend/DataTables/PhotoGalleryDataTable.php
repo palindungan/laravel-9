@@ -71,7 +71,7 @@ class PhotoGalleryDataTable extends DataTable
     {
         return [
             ['name' => 'sort', 'title' => 'No Urut', 'data' => 'sort'],
-            ['name' => 'photo', 'title' => 'Foto', 'data' => 'photo'],
+            ['name' => 'photo', 'title' => 'Foto', 'data' => 'photo', 'searchable' => false],
         ];
     }
 

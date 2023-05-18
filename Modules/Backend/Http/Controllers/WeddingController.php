@@ -6,6 +6,8 @@ use Modules\Backend\DataTables\WeddingDataTable;
 use Modules\Backend\Http\Requests\CreateWeddingRequest;
 use Modules\Backend\Http\Requests\UpdateWeddingRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Admin;
+use App\Models\Event;
 use App\Repositories\WeddingRepository;
 use Illuminate\Http\Request;
 use Flash;
@@ -34,7 +36,15 @@ class WeddingController extends AppBaseController
      */
     public function create()
     {
-        return view('backend::weddings.create');
+        $admins = [null => 'Pilih Data'] + Admin::select('id', 'name')->get()->pluck('name', 'id')->toArray();
+        $events = [null => 'Pilih Data'] + Event::select('id', 'name')->get()->pluck('name', 'id')->toArray();
+
+        return view('backend::weddings.create', 
+            compact(
+                "admins", 
+                "events",
+            )
+        );
     }
 
     /**
@@ -74,13 +84,21 @@ class WeddingController extends AppBaseController
     {
         $wedding = $this->weddingRepository->find($id);
 
+        $admins = [null => 'Pilih Data'] + Admin::select('id', 'name')->get()->pluck('name', 'id')->toArray();
+        $events = [null => 'Pilih Data'] + Event::select('id', 'name')->get()->pluck('name', 'id')->toArray();
+
         if (empty($wedding)) {
             Flash::error('Wedding not found');
 
             return redirect(route('weddings.index'));
         }
 
-        return view('backend::weddings.edit')->with('wedding', $wedding);
+        return view('backend::weddings.edit', 
+            compact(
+                "admins", 
+                "events",
+            )
+        )->with('wedding', $wedding);
     }
 
     /**

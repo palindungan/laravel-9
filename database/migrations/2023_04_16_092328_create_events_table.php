@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->dateTime('start');
-            $table->dateTime('end');
+            $table->date('date_start');
+            $table->date('date_end');
+            $table->time('time_start');
+            $table->time('time_end');
             $table->string('place');
             $table->text('address');
             $table->timestamps();

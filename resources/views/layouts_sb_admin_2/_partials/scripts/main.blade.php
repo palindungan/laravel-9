@@ -51,7 +51,7 @@
             datepicker:false,
         });
         $('.datepicker').datetimepicker({
-            format:'Y/m/d',
+            format:'Y-m-d',
             timepicker:false,
         });
     });

@@ -10,8 +10,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<script src="{{ asset('vendor/datetimepicker/jquery.datetimepicker.js') }}"></script>
 
 <script>
     function btnSubmitDisabled() {
@@ -46,5 +45,14 @@
         $('.select2').select2();
 
         $('.datetimepicker').datetimepicker();
+        $('.timepicker').datetimepicker({
+            format:'H:i',
+            formatTime:'H:i',
+            datepicker:false,
+        });
+        $('.datepicker').datetimepicker({
+            format:'Y/m/d',
+            timepicker:false,
+        });
     });
 </script>

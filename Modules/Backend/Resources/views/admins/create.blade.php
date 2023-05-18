@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1>
-                        Tambah Mempelai
+                        Tambah Pengantin
                     </h1>
                 </div>
             </div>

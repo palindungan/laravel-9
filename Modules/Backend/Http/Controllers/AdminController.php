@@ -157,7 +157,7 @@ class AdminController extends AppBaseController
             $custom_name_file = 'photo' . 'f' . time() . '.' . $file->extension();
 
             $ori = $file->storeAs(
-                date('Ym'),
+                'photo' . '/' . date('Ym'),
                 $custom_name_file,
                 'admins'
             );

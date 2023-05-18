@@ -10,6 +10,7 @@ class PhotoGallery extends Model
     public $table = 'photo_galleries';
 
     public $fillable = [
+        'sort',
         'photo'
     ];
 
@@ -18,6 +19,7 @@ class PhotoGallery extends Model
     ];
 
     public static array $rules = [
+        'sort' => 'nullable',
         'photo' => 'nullable|image',
         'created_at' => 'nullable',
         'updated_at' => 'nullable'

@@ -18,7 +18,11 @@ class PhotoGalleryDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'backend::photo_galleries.datatables_actions');
+        return $dataTable->editColumn('photo', function($row) {
+            return '<img src="' . $row->photo_thumbnail . '" alt="photo" class="img-thumbnail img-thumbnail-photo" style="max-height: 200px;">';
+        })
+        ->addColumn('action', 'backend::photo_galleries.datatables_actions')
+        ->rawColumns(['photo', 'action']);
     }
 
     /**
@@ -46,7 +50,7 @@ class PhotoGalleryDataTable extends DataTable
             ->parameters([
                 // 'dom'       => 'Bfrtip',
                 'stateSave' => true,
-                'order'     => [[0, 'desc']],
+                'order'     => [[0, 'asc']],
                 'buttons'   => [
                     // Enable Buttons as per your need
                     //                    ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
@@ -66,7 +70,8 @@ class PhotoGalleryDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'photo'
+            ['name' => 'sort', 'title' => 'No Urut', 'data' => 'sort'],
+            ['name' => 'photo', 'title' => 'Foto', 'data' => 'photo'],
         ];
     }
 

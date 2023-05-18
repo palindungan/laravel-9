@@ -8,6 +8,7 @@ use App\Repositories\BaseRepository;
 class PhotoGalleryRepository extends BaseRepository
 {
     protected $fieldSearchable = [
+        'sort',
         'photo'
     ];
 

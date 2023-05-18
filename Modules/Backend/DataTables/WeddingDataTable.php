@@ -3,6 +3,8 @@
 namespace Modules\Backend\DataTables;
 
 use App\Models\Wedding;
+use App\Repositories\WeddingRepository;
+use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
@@ -29,7 +31,12 @@ class WeddingDataTable extends DataTable
      */
     public function query(Wedding $model)
     {
-        return $model->newQuery();
+        return WeddingRepository::getData()->select(
+            'weddings.*',
+            DB::raw('bride.name as bride_name'),
+            DB::raw('groom.name as groom_name'),
+            DB::raw('events.name as event_name'),
+        );
     }
 
     /**
@@ -66,9 +73,9 @@ class WeddingDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'bride_id',
-            'groom_id',
-            'main_event_id'
+            ['name' => 'events.name', 'title' => 'Acara Utama', 'data' => 'event_name'],
+            ['name' => 'bride.name', 'title' => 'Pengantin Perempuan', 'data' => 'bride_name'],
+            ['name' => 'groom.name', 'title' => 'Pengantin Pria', 'data' => 'groom_name'],
         ];
     }
 

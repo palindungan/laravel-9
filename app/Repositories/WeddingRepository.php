@@ -22,4 +22,15 @@ class WeddingRepository extends BaseRepository
     {
         return Wedding::class;
     }
+
+    public static function getData($param = [])
+    {
+        $model = Wedding::query();
+
+        $model = $model->leftJoin('admin AS bride', 'bride.id', '=', 'weddings.bride_id');
+        $model = $model->leftJoin('admin AS groom', 'groom.id', '=', 'weddings.groom_id');
+        $model = $model->leftJoin('events', 'events.id', '=', 'weddings.main_event_id');
+
+        return $model;
+    }
 }

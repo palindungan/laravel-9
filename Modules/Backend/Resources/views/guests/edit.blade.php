@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1>
-                        Edit Guest
+                        Edit Tamu Undangan
                     </h1>
                 </div>
             </div>
@@ -28,8 +28,8 @@
             </div>
 
             <div class="card-footer">
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('guests.index') }}" class="btn btn-default"> Cancel </a>
+                {!! Form::submit('Simpan', ['class' => 'btn btn-primary']) !!}
+                <a href="{{ route('guests.index') }}" class="btn btn-default"> Kembali </a>
             </div>
 
             {!! Form::close() !!}

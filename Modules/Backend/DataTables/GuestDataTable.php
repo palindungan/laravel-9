@@ -66,8 +66,8 @@ class GuestDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'code',
-            'name'
+            ['name' => 'code', 'title' => 'Kode', 'data' => 'code'],
+            ['name' => 'name', 'title' => 'Nama', 'data' => 'name'],
         ];
     }
 

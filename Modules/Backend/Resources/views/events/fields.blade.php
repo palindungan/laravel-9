@@ -39,11 +39,3 @@
     {!! Form::label('address', 'Address:') !!}
     {!! Form::textarea('address', null, ['class' => 'form-control', 'required', 'maxlength' => 65535, 'maxlength' => 65535]) !!}
 </div>
-
-@push('page_scripts')
-    <script>
-        $(document).ready(function() {
-            
-        });
-    </script>
-@endpush

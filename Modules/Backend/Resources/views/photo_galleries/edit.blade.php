@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::model($photoGallery, ['route' => ['photoGalleries.update', $photoGallery->id], 'method' => 'patch']) !!}
+            {!! Form::model($photoGallery, ['route' => ['photoGalleries.update', $photoGallery->id], 'method' => 'patch', 'enctype' => 'multipart/form-data']) !!}
 
             <div class="card-body">
                 <div class="row">
@@ -28,8 +28,8 @@
             </div>
 
             <div class="card-footer">
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('photoGalleries.index') }}" class="btn btn-default"> Cancel </a>
+                {!! Form::submit('Simpan', ['class' => 'btn btn-primary']) !!}
+                <a href="{{ route('photoGalleries.index') }}" class="btn btn-default"> Kembali </a>
             </div>
 
             {!! Form::close() !!}

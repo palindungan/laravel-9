@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Repositories\PhotoGalleryRepository;
 use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Support\Facades\Storage;
 
 class PhotoGalleryController extends AppBaseController
 {
@@ -43,6 +44,9 @@ class PhotoGalleryController extends AppBaseController
     public function store(CreatePhotoGalleryRequest $request)
     {
         $input = $request->all();
+
+        $update_media = $this->updateMedia([]);
+        $input['photo'] = $update_media['photo'];
 
         $photoGallery = $this->photoGalleryRepository->create($input);
 
@@ -96,7 +100,12 @@ class PhotoGalleryController extends AppBaseController
             return redirect(route('photoGalleries.index'));
         }
 
-        $photoGallery = $this->photoGalleryRepository->update($request->all(), $id);
+        $input = $request->all();
+
+        $update_media = $this->updateMedia(["photoGallery" => $photoGallery]);
+        $input['photo'] = $update_media['photo'];
+
+        $photoGallery = $this->photoGalleryRepository->update($input, $id);
 
         Flash::success('Photo Gallery updated successfully.');
 
@@ -118,10 +127,46 @@ class PhotoGalleryController extends AppBaseController
             return redirect(route('photoGalleries.index'));
         }
 
+        if (!empty($photoGallery->photo)) {
+            if (Storage::disk('photo_galleries')->exists($photoGallery->photo)) {
+                Storage::disk('photo_galleries')->delete($photoGallery->photo);
+            }
+        }
+
         $this->photoGalleryRepository->delete($id);
 
         Flash::success('Photo Gallery deleted successfully.');
 
         return redirect(route('photoGalleries.index'));
+    }
+
+    public function updateMedia($param = [])
+    {
+        $request = request();
+
+        // photo
+        $input['photo'] = @$param['photoGallery']->photo;
+        if ($request->hasFile('photo')) {
+            // delete old image
+            if (!empty($input['photo'])) {
+                if (Storage::disk('photo_galleries')->exists($input['photo'])) {
+                    Storage::disk('photo_galleries')->delete($input['photo']);
+                }
+            }
+
+            $file = $request->file('photo');
+            $name_file = $file->getClientOriginalName();
+            $custom_name_file = 'photo' . 'f' . time() . '.' . $file->extension();
+
+            $ori = $file->storeAs(
+                'photo' . '/' . date('Ym'),
+                $custom_name_file,
+                'photo_galleries'
+            );
+
+            $input['photo'] = $ori;
+        }
+
+        return $input;
     }
 }

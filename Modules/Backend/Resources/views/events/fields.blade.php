@@ -4,29 +4,41 @@
     {!! Form::text('name', null, ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!}
 </div>
 
-<!-- Start Field -->
+<!-- Date Start Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('start', 'Start:') !!}
-    {!! Form::text('start', null, ['class' => 'form-control','id'=>'start']) !!}
+    {!! Form::label('date_start', 'Date Start:') !!}
+    {!! Form::text('date_start', null, ['class' => 'form-control','id'=>'date_start']) !!}
 </div>
 
 @push('page_scripts')
     <script type="text/javascript">
-        $('#start').datepicker()
+        $('#date_start').datepicker()
     </script>
 @endpush
 
-<!-- End Field -->
+<!-- Date End Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('end', 'End:') !!}
-    {!! Form::text('end', null, ['class' => 'form-control','id'=>'end']) !!}
+    {!! Form::label('date_end', 'Date End:') !!}
+    {!! Form::text('date_end', null, ['class' => 'form-control','id'=>'date_end']) !!}
 </div>
 
 @push('page_scripts')
     <script type="text/javascript">
-        $('#end').datepicker()
+        $('#date_end').datepicker()
     </script>
 @endpush
+
+<!-- Time Start Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('time_start', 'Time Start:') !!}
+    {!! Form::text('time_start', null, ['class' => 'form-control', 'required']) !!}
+</div>
+
+<!-- Time End Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('time_end', 'Time End:') !!}
+    {!! Form::text('time_end', null, ['class' => 'form-control', 'required']) !!}
+</div>
 
 <!-- Place Field -->
 <div class="form-group col-sm-6">

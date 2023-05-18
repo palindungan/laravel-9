@@ -67,8 +67,10 @@ class EventDataTable extends DataTable
     {
         return [
             'name',
-            'start',
-            'end',
+            'date_start',
+            'date_end',
+            'time_start',
+            'time_end',
             'place',
             'address'
         ];

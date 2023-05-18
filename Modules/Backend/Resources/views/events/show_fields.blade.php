@@ -4,16 +4,28 @@
     <p>{{ $event->name }}</p>
 </div>
 
-<!-- Start Field -->
+<!-- Date Start Field -->
 <div class="col-sm-12">
-    {!! Form::label('start', 'Start:') !!}
-    <p>{{ $event->start }}</p>
+    {!! Form::label('date_start', 'Date Start:') !!}
+    <p>{{ $event->date_start }}</p>
 </div>
 
-<!-- End Field -->
+<!-- Date End Field -->
 <div class="col-sm-12">
-    {!! Form::label('end', 'End:') !!}
-    <p>{{ $event->end }}</p>
+    {!! Form::label('date_end', 'Date End:') !!}
+    <p>{{ $event->date_end }}</p>
+</div>
+
+<!-- Time Start Field -->
+<div class="col-sm-12">
+    {!! Form::label('time_start', 'Time Start:') !!}
+    <p>{{ $event->time_start }}</p>
+</div>
+
+<!-- Time End Field -->
+<div class="col-sm-12">
+    {!! Form::label('time_end', 'Time End:') !!}
+    <p>{{ $event->time_end }}</p>
 </div>
 
 <!-- Place Field -->

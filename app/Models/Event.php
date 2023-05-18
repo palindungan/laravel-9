@@ -10,24 +10,28 @@ class Event extends Model
 
     public $fillable = [
         'name',
-        'start',
-        'end',
+        'date_start',
+        'date_end',
+        'time_start',
+        'time_end',
         'place',
         'address'
     ];
 
     protected $casts = [
         'name' => 'string',
-        'start' => 'datetime',
-        'end' => 'datetime',
+        'date_start' => 'date',
+        'date_end' => 'date',
         'place' => 'string',
         'address' => 'string'
     ];
 
     public static array $rules = [
         'name' => 'required|string|max:255',
-        'start' => 'required',
-        'end' => 'required',
+        'date_start' => 'required',
+        'date_end' => 'required',
+        'time_start' => 'required',
+        'time_end' => 'required',
         'place' => 'required|string|max:255',
         'address' => 'required|string|max:65535',
         'created_at' => 'nullable',

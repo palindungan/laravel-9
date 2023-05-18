@@ -68,7 +68,7 @@ class SettingDataTable extends DataTable
         return [
             ['name' => 'code', 'title' => 'Kode', 'data' => 'code'],
             ['name' => 'name', 'title' => 'Nama', 'data' => 'name'],
-            ['name' => 'value', 'title' => 'Nilai', 'data' => 'value'],
+            // ['name' => 'value', 'title' => 'Nilai', 'data' => 'value'],
         ];
     }
 

@@ -8,10 +8,12 @@
                 <p><img src="{{ asset('wedding/images/qrcode_bank_mandiri_150.png') }}" alt="Rekening Bank Mandiri"/></p>
                 <p style="">{{ @$setting['6_3']->value }}</p>
                 <p>
-                    <input type="text" class="btn btn-info btn-sm" readonly value="{{ @$setting['6_4']->value }}">
+                    <input type="text" class="btn btn-info btn-sm" readonly value="{{ @$setting['6_4']->value }}" id="myInput">
                 </p>
                 <p>
-                    <button class="btn btn-default btn-sm">Copy Rekening</button>
+                    <button class="btn btn-default btn-sm" onclick="myFunction()" onmouseout="outFunc()">
+                        <span class="tooltiptext" id="myTooltip">Copy Rekening</span>
+                    </button>
                 </p>
             </div>
         </div>

@@ -20,7 +20,11 @@ class GreetingDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'backend::greetings.datatables_actions');
+        return $dataTable
+            ->editColumn('created_at', function($row) {
+                return !empty($row->created_at) ? $row->created_at->format('Y-m-d h:i:s') : '-';
+            })
+            ->addColumn('action', 'backend::greetings.datatables_actions');
     }
 
     /**
@@ -71,6 +75,7 @@ class GreetingDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            ['name' => 'greetings.created_at', 'title' => 'Waktu', 'data' => 'created_at'],
             ['name' => 'guests.name', 'title' => 'Tamu Undangan', 'data' => 'guest_name'],
             ['name' => 'greetings.greet', 'title' => 'Ucapan', 'data' => 'greet'],
         ];

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('groom_id');
             $table->integer('main_event_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

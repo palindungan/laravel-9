@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('guest_id');
             $table->text('greet');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

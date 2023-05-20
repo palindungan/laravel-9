@@ -108,11 +108,11 @@ class AdminController extends AppBaseController
         $update_media = $this->updateMedia(["admin" => $admin], $request);
         $input['photo'] = $update_media['photo'];
 
-        if (empty($request->password)) {
-            $input['password'] = $admin->password;
+        $input['password'] = $admin->password;
+        if (!empty($request->password)) {
+            $input['password'] = Hash::make($input['password']);
         }
-        $input['password'] = Hash::make($input['password']);
-
+    
         $admin = $this->adminRepository->update($input, $id);
 
         Flash::success('Admin updated successfully.');

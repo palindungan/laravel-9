@@ -46,7 +46,7 @@ class GuestDataTable extends DataTable
             ->parameters([
                 // 'dom'       => 'Bfrtip',
                 'stateSave' => true,
-                'order'     => [[0, 'desc']],
+                'order'     => [[1, 'asc']],
                 'buttons'   => [
                     // Enable Buttons as per your need
                     //                    ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],

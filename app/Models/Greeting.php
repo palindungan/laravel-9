@@ -21,7 +21,8 @@ class Greeting extends Model
         'guest_id' => 'required',
         'greet' => 'required|string|max:65535',
         'created_at' => 'nullable',
-        'updated_at' => 'nullable'
+        'updated_at' => 'nullable',
+        'deleted_at' => 'nullable'
     ];
 
     

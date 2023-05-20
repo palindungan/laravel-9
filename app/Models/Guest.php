@@ -22,6 +22,7 @@ class Guest extends Model
         'code' => 'required|string|max:255',
         'name' => 'required|string|max:255',
         'created_at' => 'nullable',
-        'updated_at' => 'nullable'
+        'updated_at' => 'nullable',
+        'deleted_at' => 'nullable'
     ];
 }

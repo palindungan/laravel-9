@@ -22,7 +22,8 @@ class PhotoGallery extends Model
         'sort' => 'nullable',
         'photo' => 'nullable|image',
         'created_at' => 'nullable',
-        'updated_at' => 'nullable'
+        'updated_at' => 'nullable',
+        'deleted_at' => 'nullable'
     ];
 
     protected $appends = ['photo_thumbnail'];

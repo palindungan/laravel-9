@@ -23,7 +23,8 @@ class Wedding extends Model
         'groom_id' => 'required',
         'main_event_id' => 'required',
         'created_at' => 'nullable',
-        'updated_at' => 'nullable'
+        'updated_at' => 'nullable',
+        'deleted_at' => 'nullable'
     ];
 
     

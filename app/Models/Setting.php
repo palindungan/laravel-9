@@ -25,7 +25,8 @@ class Setting extends Model
         'name' => 'required|string|max:255',
         'value' => 'required|string|max:65535',
         'created_at' => 'nullable',
-        'updated_at' => 'nullable'
+        'updated_at' => 'nullable',
+        'deleted_at' => 'nullable'
     ];
 
     

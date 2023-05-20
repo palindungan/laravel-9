@@ -24,7 +24,7 @@ class UpdateAdminRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = Admin::$rules;
+        $rules = Admin::$update_rules;
         
         return $rules;
     }

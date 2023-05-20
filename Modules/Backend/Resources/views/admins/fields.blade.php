@@ -25,13 +25,13 @@
 <!-- password Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('password', 'Password:') !!}
-    {!! Form::password('password', ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!}
+    {!! Form::password('password', ['class' => 'form-control', 'maxlength' => 255, 'maxlength' => 255]) !!}
 </div>
 
 <!-- Konfirmasi Password Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('password_confirmation', 'Konfirmasi Password:') !!}
-    {!! Form::password('password_confirmation', ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!}
+    {!! Form::password('password_confirmation', ['class' => 'form-control', 'maxlength' => 255, 'maxlength' => 255]) !!}
 </div>
 
 {{-- <!-- Remember Token Field -->

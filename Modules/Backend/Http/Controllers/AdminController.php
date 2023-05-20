@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Repositories\AdminRepository;
 use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends AppBaseController
@@ -47,6 +48,8 @@ class AdminController extends AppBaseController
 
         $update_media = $this->updateMedia([], $request);
         $input['photo'] = $update_media['photo'];
+
+        $input['password'] = Hash::make($input['password']);
 
         $admin = $this->adminRepository->create($input);
 
@@ -104,6 +107,11 @@ class AdminController extends AppBaseController
 
         $update_media = $this->updateMedia(["admin" => $admin], $request);
         $input['photo'] = $update_media['photo'];
+
+        if (empty($request->password)) {
+            $input['password'] = $admin->password;
+        }
+        $input['password'] = Hash::make($input['password']);
 
         $admin = $this->adminRepository->update($input, $id);
 

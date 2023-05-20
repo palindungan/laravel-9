@@ -55,6 +55,22 @@ class Admin extends Model
         'name_parent_male' => 'nullable|string|max:255',
         'name_parent_female' => 'nullable|string|max:255'
     ];
+    public static array $update_rules = [
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|max:255',
+        'email_verified_at' => 'nullable',
+        'password' => 'nullable|string|max:255|confirmed',
+        'remember_token' => 'nullable|string|max:100',
+        'created_at' => 'nullable',
+        'updated_at' => 'nullable',
+        'photo' => 'nullable|image',
+        'attachment' => 'nullable|string|max:255',
+        'name_short' => 'required|string|max:255',
+        'name_degree_first' => 'nullable|string|max:255',
+        'name_degree_last' => 'nullable|string|max:255',
+        'name_parent_male' => 'nullable|string|max:255',
+        'name_parent_female' => 'nullable|string|max:255'
+    ];
 
     protected $appends = ['photo_thumbnail'];
     public function getPhotoThumbnailAttribute()

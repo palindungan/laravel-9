@@ -3,9 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Wedding extends Model
 {
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
+
     public $table = 'weddings';
 
     public $fillable = [
@@ -14,9 +18,7 @@ class Wedding extends Model
         'main_event_id'
     ];
 
-    protected $casts = [
-        
-    ];
+    protected $casts = [];
 
     public static array $rules = [
         'bride_id' => 'required',
@@ -26,6 +28,4 @@ class Wedding extends Model
         'updated_at' => 'nullable',
         'deleted_at' => 'nullable'
     ];
-
-    
 }

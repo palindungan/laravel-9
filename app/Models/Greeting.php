@@ -3,9 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Greeting extends Model
 {
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
+
     public $table = 'greetings';
 
     public $fillable = [
@@ -24,6 +28,4 @@ class Greeting extends Model
         'updated_at' => 'nullable',
         'deleted_at' => 'nullable'
     ];
-
-    
 }

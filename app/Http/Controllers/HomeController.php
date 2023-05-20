@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Event;
+use App\Models\PhotoGallery;
 use App\Models\Setting;
 use App\Models\Wedding;
 use App\Repositories\WeddingRepository;
@@ -72,9 +73,12 @@ class HomeController extends Controller
 
         $events = Event::all();
 
+        $photo_galleries = PhotoGallery::all();
+
         return view('home.index',
                 compact(
                     "events",
+                    "photo_galleries",
                 )
             )
             ->with('bride', $bride)

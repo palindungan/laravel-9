@@ -34,6 +34,11 @@
 <script>
     var d = new Date("2023-07-01 12:00:00");
 
+    var event_date = "{{ @$wedding->event_date_start }} {{ @$wedding->event_time_start }}";
+    if (event_date) {
+        d = new Date(event_date);
+    }
+
     console.log(d.getFullYear() + ","
     + (d.getMonth() + 1) + ","
     + d.getDate() + ","

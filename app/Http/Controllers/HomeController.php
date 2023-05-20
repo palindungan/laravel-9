@@ -24,4 +24,9 @@ class HomeController extends Controller
     {
         return view('home.index');
     }
+
+    public function backup()
+    {
+        return view('_backup.home.index');
+    }
 }

@@ -29,4 +29,6 @@
     @include('home.gallery')
 
     @include('home.gift')
+
+    {{-- @include('home.greet') --}}
 @endsection

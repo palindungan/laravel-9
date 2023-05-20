@@ -30,4 +30,6 @@
     @include('_backup.home.gallery')
 
     @include('_backup.home.gift')
+
+    @include('_backup.home.greet')
 @endsection

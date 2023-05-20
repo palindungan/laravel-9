@@ -15,8 +15,6 @@
         {{-- @include('layouts_wedding._partials.navigation') --}}
 
         @yield('content')
-
-        @include('layouts_wedding._partials.footer')
     </div>
 
     <div class="gototop js-top">

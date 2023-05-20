@@ -1,7 +1,7 @@
 <!-- Guest Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('guest_id', 'Guest Id:') !!}
-    {!! Form::number('guest_id', null, ['class' => 'form-control', 'required']) !!}
+<div class="form-group col-sm-12">
+    {!! Form::label('guest_id', 'Tamu Undangan:') !!}
+    {!! Form::select('guest_id', $guests, null, ['class' => 'form-control select2', 'required']) !!}
 </div>
 
 <!-- Greet Field -->

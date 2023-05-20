@@ -3,6 +3,8 @@
 namespace Modules\Backend\DataTables;
 
 use App\Models\Greeting;
+use App\Repositories\GreetingRepository;
+use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
@@ -29,7 +31,10 @@ class GreetingDataTable extends DataTable
      */
     public function query(Greeting $model)
     {
-        return $model->newQuery();
+        return GreetingRepository::getData()->select(
+            'greetings.*',
+            DB::raw('guests.name as guest_name'),
+        );
     }
 
     /**
@@ -66,8 +71,8 @@ class GreetingDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'guest_id',
-            'greet'
+            ['name' => 'guests.name', 'title' => 'Tamu Undangan', 'data' => 'guest_name'],
+            ['name' => 'greetings.greet', 'title' => 'Ucapan', 'data' => 'greet'],
         ];
     }
 

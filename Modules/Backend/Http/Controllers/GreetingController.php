@@ -6,6 +6,7 @@ use Modules\Backend\DataTables\GreetingDataTable;
 use Modules\Backend\Http\Requests\CreateGreetingRequest;
 use Modules\Backend\Http\Requests\UpdateGreetingRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Guest;
 use App\Repositories\GreetingRepository;
 use Illuminate\Http\Request;
 use Flash;
@@ -34,7 +35,13 @@ class GreetingController extends AppBaseController
      */
     public function create()
     {
-        return view('backend::greetings.create');
+        $guests = [null => 'Pilih Data'] + Guest::select('id', 'name')->get()->pluck('name', 'id')->toArray();
+    
+        return view('backend::greetings.create', 
+            compact(
+                "guests",
+            )
+        );
     }
 
     /**
@@ -80,7 +87,13 @@ class GreetingController extends AppBaseController
             return redirect(route('greetings.index'));
         }
 
-        return view('backend::greetings.edit')->with('greeting', $greeting);
+        $guests = [null => 'Pilih Data'] + Guest::select('id', 'name')->get()->pluck('name', 'id')->toArray();
+
+        return view('backend::greetings.edit', 
+            compact(
+                "guests",
+            )
+        )->with('greeting', $greeting);
     }
 
     /**

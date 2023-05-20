@@ -21,4 +21,13 @@ class GreetingRepository extends BaseRepository
     {
         return Greeting::class;
     }
+
+    public static function getData($param = [])
+    {
+        $model = Greeting::query();
+
+        $model = $model->leftJoin('guests', 'guests.id', '=', 'greetings.guest_id');
+
+        return $model;
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Event;
 use App\Models\Setting;
 use App\Models\Wedding;
 use App\Repositories\WeddingRepository;
@@ -69,7 +70,13 @@ class HomeController extends Controller
             $groom = Admin::find($wedding->groom_id);
         }
 
-        return view('home.index')
+        $events = Event::all();
+
+        return view('home.index',
+                compact(
+                    "events",
+                )
+            )
             ->with('bride', $bride)
             ->with('groom', $groom)
             ->with('wedding', $wedding)

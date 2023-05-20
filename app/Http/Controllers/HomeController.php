@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Setting;
 use App\Models\Wedding;
 use App\Repositories\WeddingRepository;
@@ -53,20 +54,26 @@ class HomeController extends Controller
 
         $wedding = WeddingRepository::getData()->select(
             'weddings.*',
-            DB::raw('bride.name as bride_name'),
-            DB::raw('bride.name_short as bride_name_short'),
-
-            DB::raw('groom.name as groom_name'),
-            DB::raw('groom.name_short as groom_name_short'),
-
             DB::raw('events.name as event_name'),
             DB::raw('events.date_start as event_date_start'),
             DB::raw('events.time_start as event_time_start'),
         )->first();
 
+        $bride = null;
+        if ($wedding->bride_id) {
+            $bride = Admin::find($wedding->bride_id);
+        }
+
+        $groom = null;
+        if ($wedding->groom_id) {
+            $groom = Admin::find($wedding->groom_id);
+        }
+
         return view('home.index')
-            ->with('setting', $setting)
-            ->with('wedding', $wedding);
+            ->with('bride', $bride)
+            ->with('groom', $groom)
+            ->with('wedding', $wedding)
+            ->with('setting', $setting);
     }
 
     public function backup()

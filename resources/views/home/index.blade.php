@@ -10,7 +10,7 @@
                     <div class="display-t" style="height: 600px;">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn" style="height: 600px;">
                             <h2 style="margin-bottom: 0px;">{{ @$setting['1_1']->value }}</h2>
-                            <h1 style="margin-bottom: 30px;">{{ @$wedding->bride_name_short }} &amp; {{ @$wedding->groom_name_short }}</h1>
+                            <h1 style="margin-bottom: 30px;">{{ @$bride->name_short }} &amp; {{ @$groom->name_short }}</h1>
                             <div class="simply-countdown simply-countdown-one"></div>
                             <h2 style="margin-bottom: 0px;">{{ @$wedding->event_date_start }}</h2>
                         </div>

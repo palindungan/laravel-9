@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('backend')->group(function() {
+Route::prefix('backend-ain-cici')->group(function() {
     // Route::get('/', 'BackendController@index');
     Route::resource('admins', AdminController::class);
     Route::resource('settings', SettingController::class);

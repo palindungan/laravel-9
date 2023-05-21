@@ -51,10 +51,10 @@
                 </div> --}}
                 <div class="modal-body" style="text-align: center; background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url({{ asset('wedding-master/images/img_bg_2.jpg') }}); height: 100%;">
                     <h2 style="color: white; font-size: 25px; margin-top: 50px; font-weight: 800;">Undangan Pernikahan</h2>
-                    <h1 style="color: white; font-size: 40px; font-weight: 500; line-height: 1.5; font-family: 'Sacramento', Arial, serif;">{{ @$bride->name_short }} &amp; {{ @$groom->name_short }}</h1>
-                    <h2 style="color: white; font-size: 16px; margin-top: 80px; margin-bottom: 15px;">Dear Mr/Mrs/Ms</h2>
-                    <h1 style="color: white; font-size: 30px; line-height: 1.5; font-family: 'Sacramento', Arial, serif; font-weight: 700;">Nama Tamu</h1>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" style="margin-top: 20px;">Buka Undangan</button>
+                    <h1 style="color: white; font-size: 45px; font-weight: 500; line-height: 1.5; font-family: 'Sacramento', Arial, serif;">{{ @$bride->name_short }} &amp; {{ @$groom->name_short }}</h1>
+                    <h2 style="color: white; font-size: 20px; margin-top: 80px; margin-bottom: 15px;">Dear Mr/Mrs/Ms</h2>
+                    <h1 style="color: white; font-size: 30px; line-height: 1.5; font-weight: 700;">Nama Tamu</h1>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" style="margin-top: 20px;"><i class="fa fa-envelope" aria-hidden="true"></i> Buka Undangan</button>
                 </div>
                 {{-- <div class="modal-footer"></div> --}}
             </div>

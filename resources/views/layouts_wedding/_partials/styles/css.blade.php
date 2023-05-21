@@ -83,3 +83,11 @@
         }
     }
 </style>
+
+<style>
+    .modal-dialog {
+        position: relative;
+        width: auto;
+        margin: 0px;
+    }
+</style>

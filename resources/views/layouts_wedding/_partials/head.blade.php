@@ -49,3 +49,5 @@
 		<script src="{{ asset('wedding-master/js/respond.min.js') }}"></script>
 	<![endif]
 -->
+
+<link rel="stylesheet" href="{{ asset('css/snow.css') }}">

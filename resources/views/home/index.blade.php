@@ -20,7 +20,7 @@
         </div>
     </header>
 
-    <audio id="audio" controls autoplay style="width: 100%;">
+    <audio id="audio" controls autoplay loop style="width: 100%;">
         <source src="{{ asset('background-music.mp3') }}" type="audio/mpeg">
         Please update your browser does not support the audio element.
     </audio>

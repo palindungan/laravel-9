@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Event;
+use App\Models\Guest;
 use App\Models\PhotoGallery;
 use App\Models\Setting;
 use App\Models\Wedding;
@@ -27,8 +28,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index($code = null)
     {
+        $guest = Guest::where('code', $code)->first();
+        if (empty($guest)) {
+            return view('page_not_found');
+        }
+
         $settings = Setting::all();
         $setting = [];
         foreach ($settings as $key => $value) {
@@ -62,6 +68,7 @@ class HomeController extends Controller
                     "photo_galleries",
                 )
             )
+            ->with('guest', $guest)
             ->with('bride', $bride)
             ->with('groom', $groom)
             ->with('wedding', $wedding)

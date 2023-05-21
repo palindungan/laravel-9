@@ -30,29 +30,10 @@ class HomeController extends Controller
     public function index()
     {
         $settings = Setting::all();
-        $setting = [
-            "1_1" => $settings->where('code', '1_1')->first(),
-
-            "2_1" => $settings->where('code', '2_1')->first(),
-            "2_2" => $settings->where('code', '2_2')->first(),
-
-            "3_1" => $settings->where('code', '3_1')->first(),
-            "3_2" => $settings->where('code', '3_2')->first(),
-
-            "4_1" => $settings->where('code', '4_1')->first(),
-            "4_2" => $settings->where('code', '4_2')->first(),
-            "4_3" => $settings->where('code', '4_3')->first(),
-            "4_4" => $settings->where('code', '4_4')->first(),
-
-            "5_1" => $settings->where('code', '5_1')->first(),
-            "5_2" => $settings->where('code', '5_2')->first(),
-            "5_3" => $settings->where('code', '5_3')->first(),
-
-            "6_1" => $settings->where('code', '6_1')->first(),
-            "6_2" => $settings->where('code', '6_2')->first(),
-            "6_3" => $settings->where('code', '6_3')->first(),
-            "6_4" => $settings->where('code', '6_4')->first(),
-        ];
+        $setting = [];
+        foreach ($settings as $key => $value) {
+            $setting[$value->code] =  $value;
+        }
 
         $wedding = WeddingRepository::getData()->select(
             'weddings.*',

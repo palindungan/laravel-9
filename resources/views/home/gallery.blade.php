@@ -1,10 +1,10 @@
 <div id="fh5co-gallery" class="fh5co-section-gray" style="padding-top: 0px;">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-bottom: 20px;">
                 <span>{{ @$setting['5_1']->value }}</span>
                 <h2>{{ @$setting['5_2']->value }}</h2>
-                <p>{{ @$setting['5_3']->value }}</p>
+                {{-- <p>{{ @$setting['5_3']->value }}</p> --}}
             </div>
         </div>
         <div class="row row-bottom-padded-md">

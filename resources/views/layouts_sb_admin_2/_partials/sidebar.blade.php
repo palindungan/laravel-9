@@ -13,7 +13,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Admin / Pengantin -->
-    <li class="nav-item {{ Request::is('backend/admins*') ? 'active' : '' }}">
+    <li class="nav-item {{ Request::is('backend-ain-cici/admins*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('admins.index') }}">
             <i class="fas fa-fw fa-user"></i>
             <span>Admin / Pengantin</span>
@@ -21,7 +21,7 @@
     </li>
 
     <!-- Nav Item - Acara -->
-    <li class="nav-item {{ Request::is('backend/events*') ? 'active' : '' }}">
+    <li class="nav-item {{ Request::is('backend-ain-cici/events*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('events.index') }}">
             <i class="fas fa-fw fa-cog"></i>
             <span>Acara</span>
@@ -29,7 +29,7 @@
     </li>
 
     <!-- Nav Item - Pernikahan -->
-    <li class="nav-item {{ Request::is('backend/weddings*') ? 'active' : '' }}">
+    <li class="nav-item {{ Request::is('backend-ain-cici/weddings*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('weddings.index') }}">
             <i class="fas fa-fw fa-cog"></i>
             <span>Pernikahan</span>
@@ -37,7 +37,7 @@
     </li>
 
     <!-- Nav Item - Galeri Foto -->
-    <li class="nav-item {{ Request::is('backend/photoGalleries*') ? 'active' : '' }}">
+    <li class="nav-item {{ Request::is('backend-ain-cici/photoGalleries*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('photoGalleries.index') }}">
             <i class="fas fa-fw fa-cog"></i>
             <span>Galeri Foto</span>
@@ -45,7 +45,7 @@
     </li>
 
     <!-- Nav Item - Tamu Undangan -->
-    <li class="nav-item {{ Request::is('backend/guests*') ? 'active' : '' }}">
+    <li class="nav-item {{ Request::is('backend-ain-cici/guests*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('guests.index') }}">
             <i class="fas fa-fw fa-cog"></i>
             <span>Tamu Undangan</span>
@@ -53,7 +53,7 @@
     </li>
 
     <!-- Nav Item - Ucapan -->
-    <li class="nav-item {{ Request::is('backend/greetings*') ? 'active' : '' }}">
+    <li class="nav-item {{ Request::is('backend-ain-cici/greetings*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('greetings.index') }}">
             <i class="fas fa-fw fa-cog"></i>
             <span>Ucapan</span>
@@ -61,7 +61,7 @@
     </li>
 
     <!-- Nav Item - Pengaturan -->
-    <li class="nav-item {{ Request::is('backend/settings*') ? 'active' : '' }}">
+    <li class="nav-item {{ Request::is('backend-ain-cici/settings*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('settings.index') }}">
             <i class="fas fa-fw fa-cog"></i>
             <span>Pengaturan</span>

@@ -54,7 +54,7 @@ class HomeController extends Controller
 
         $events = Event::all();
 
-        $photo_galleries = PhotoGallery::all();
+        $photo_galleries = PhotoGallery::orderBy('sort', 'asc')->get();
 
         return view('home.index',
                 compact(

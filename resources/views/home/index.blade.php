@@ -21,7 +21,7 @@
         </div>
     </header>
 
-    <audio id="audio" controls autoplay loop style="width: 100%;">
+    <audio id="audio" controls loop style="width: 100%;">
         <source src="{{ asset('background-music.mp3') }}" type="audio/mpeg">
         Please update your browser does not support the audio element.
     </audio>
@@ -40,7 +40,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+        aria-hidden="true" style="z-index: 99999;">
         <div class="modal-dialog modal-dialog-centered" role="document" style="height: 100%;">
             <div class="modal-content" style="height: 100%;">
                 {{-- <div class="modal-header">
@@ -48,12 +48,12 @@
                         Modal title
                     </h5>
                 </div> --}}
-                <div class="modal-body" style="text-align: center; background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{ asset('wedding-master/images/img_bg_2.jpg') }}); height: 100%;">
-                    <h1 style="color: white;">Undangan Pernikahan</h1>
-                    <h1 style="color: white;">{{ @$bride->name_short }} &amp; {{ @$groom->name_short }}</h1>
-                    <h1 style="color: white;">Dear Mr/Mrs/Ms</h1>
-                    <h1 style="color: white;">Nama Tamu</h1>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Buka Undangan</button>
+                <div class="modal-body" style="text-align: center; background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url({{ asset('wedding-master/images/img_bg_2.jpg') }}); height: 100%;">
+                    <h2 style="color: white; font-size: 25px; margin-top: 50px; font-weight: 800;">Undangan Pernikahan</h2>
+                    <h1 style="color: white; font-size: 40px; font-weight: 500; line-height: 1.5; font-family: 'Sacramento', Arial, serif;">{{ @$bride->name_short }} &amp; {{ @$groom->name_short }}</h1>
+                    <h2 style="color: white; font-size: 16px; margin-top: 80px; margin-bottom: 15px;">Dear Mr/Mrs/Ms</h2>
+                    <h1 style="color: white; font-size: 30px; line-height: 1.5; font-family: 'Sacramento', Arial, serif; font-weight: 700;">Nama Tamu</h1>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" style="margin-top: 20px;">Buka Undangan</button>
                 </div>
                 {{-- <div class="modal-footer"></div> --}}
             </div>
@@ -65,5 +65,9 @@
     <script>
         $('#exampleModalCenter').modal('show');
         // $('#exampleModalCenter').modal('hide');
+
+        $('#exampleModalCenter').on('hidden.bs.modal', function () {
+            $('#audio')[0].play();
+        })
     </script>
 @endpush

@@ -64,18 +64,18 @@
 </script>
 
 <script>
-    function myFunction() {
-        var copyText = document.getElementById("myInput");
+    function accountCopy() {
+        var copyText = document.getElementById("account");
         copyText.select();
         copyText.setSelectionRange(0, 99999);
         navigator.clipboard.writeText(copyText.value);
 
-        var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Copied: " + copyText.value;
+        var tooltip = document.getElementById("accountCopyBtn");
+        tooltip.innerHTML = "Tersalin: " + copyText.value;
     }
 
-    function outFunc() {
-        var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Copy Rekening";
+    function accountOut() {
+        var tooltip = document.getElementById("accountCopyBtn");
+        tooltip.innerHTML = "Salin Rekening";
     }
 </script>

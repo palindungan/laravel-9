@@ -43,3 +43,43 @@
         opacity: 1;
     }
 </style>
+
+<style>
+    .swipe_up {
+        width: 30px;
+        height: 30px;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 50%;
+        background: rgb(255, 255, 255);
+        position: relative;
+        animation: mymove 2s ease-out forwards;
+        animation-iteration-count: 1.5;
+
+        /* Safari and Chrome */
+        -webkit-animation: mymove 2s;
+        -webkit-animation-iteration-count: infinite;
+    }
+
+    @keyframes mymove {
+        from {
+            top: 200px;
+            opacity: 1;
+        }
+        to {
+            top: 0px;
+            opacity: 0;
+        }
+    }
+
+    /* Safari and Chrome */
+    @-webkit-keyframes mymove {
+        from {
+            top: 200px;
+            opacity: 1;
+        }
+        to {
+            top: 0px;
+            opacity: 0;
+        }
+    }
+</style>

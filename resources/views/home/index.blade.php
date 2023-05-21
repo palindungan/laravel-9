@@ -37,4 +37,33 @@
     @include('home.gift')
 
     {{-- @include('home.greet') --}}
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="height: 100%;">
+            <div class="modal-content" style="height: 100%;">
+                {{-- <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">
+                        Modal title
+                    </h5>
+                </div> --}}
+                <div class="modal-body" style="text-align: center; background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{ asset('wedding-master/images/img_bg_2.jpg') }}); height: 100%;">
+                    <h1 style="color: white;">Undangan Pernikahan</h1>
+                    <h1 style="color: white;">{{ @$bride->name_short }} &amp; {{ @$groom->name_short }}</h1>
+                    <h1 style="color: white;">Dear Mr/Mrs/Ms</h1>
+                    <h1 style="color: white;">Nama Tamu</h1>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Buka Undangan</button>
+                </div>
+                {{-- <div class="modal-footer"></div> --}}
+            </div>
+        </div>
+    </div>
 @endsection
+
+@push('third_party_scripts')
+    <script>
+        $('#exampleModalCenter').modal('show');
+        // $('#exampleModalCenter').modal('hide');
+    </script>
+@endpush

@@ -11,16 +11,27 @@
 <body>
     <div class="snowflakes" aria-hidden="true">
         <div class="intro"></div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❄</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
+        <div class="snowflake">●</div>
     </div>    
 
     <div class="fh5co-loader"></div>

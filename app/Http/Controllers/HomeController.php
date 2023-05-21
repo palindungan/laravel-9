@@ -72,4 +72,9 @@ class HomeController extends Controller
     {
         return view('_backup.home.index');
     }
+
+    public function pageNotFound()
+    {
+        return view('page_not_found');
+    }
 }

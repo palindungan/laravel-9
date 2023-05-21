@@ -9,11 +9,12 @@
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <div class="display-t" style="height: 850px;">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn" style="height: 850px;">
+                            <div class="swipe_up" style="margin: auto;"></div>
                             <h2 style="margin-bottom: 0px;">{{ @$setting['1_1']->value }}</h2>
                             <h1 style="margin-bottom: 30px;">{{ @$bride->name_short }} &amp; {{ @$groom->name_short }}</h1>
                             <div class="simply-countdown simply-countdown-one"></div>
                             <h2 style="margin-bottom: 0px;">{{ @$wedding->event_date_start }}</h2>
-                            <div class="swipe_up" style="margin: auto;"></div>
+                            {{-- <div class="swipe_up" style="margin: auto;"></div> --}}
                         </div>
                     </div>
                 </div>

@@ -62,11 +62,11 @@
 
     @keyframes mymove {
         from {
-            top: 200px;
+            top: 500px;
             opacity: 1;
         }
         to {
-            top: 0px;
+            top: -150px;
             opacity: 0;
         }
     }
@@ -74,11 +74,11 @@
     /* Safari and Chrome */
     @-webkit-keyframes mymove {
         from {
-            top: 200px;
+            top: 500px;
             opacity: 1;
         }
         to {
-            top: 0px;
+            top: -150px;
             opacity: 0;
         }
     }

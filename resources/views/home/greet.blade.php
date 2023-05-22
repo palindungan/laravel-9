@@ -32,14 +32,16 @@
     </div>
 </div>
 
-<div id="fh5co-couple-story" class="greetings-list">
+<div id="fh5co-couple-story" class="greetings-class">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-bottom: 0px;">
                 <h2>Ucapan</h2>
-                <hr style="border: 1px solid;">
-                <h2 style="font-size: 30px;">ِNama Pengirim</h2>
-                <p style="">Pesan</p>
+                <div id="greetings-list">
+                    <hr style="border: 1px solid;">
+                    <h2 style="font-size: 30px;">ِNama Pengirim</h2>
+                    <p style="">Pesan</p>
+                </div>
             </div>
         </div>
     </div>
@@ -91,7 +93,16 @@
                     "action": "greeting-get-data"
                 },
                 success: function(result) {
-                    console.log(result);
+                    var html = ``;
+                    var arr = result.data.data;
+                    $.each(arr, function(index, value) {
+                        html += `
+                            <hr style="border: 1px solid;">
+                            <h2 style="font-size: 25px; font-family: 'Work Sans', Arial, sans-serif;">ِNama Pengirim</h2>
+                            <p style="">Pesan</p>
+                        `;
+                    });
+                    $('#greetings-list').html(html);
                 }
             })
         }

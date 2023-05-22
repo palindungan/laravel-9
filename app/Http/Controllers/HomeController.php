@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Event;
+use App\Models\Greeting;
 use App\Models\Guest;
 use App\Models\PhotoGallery;
 use App\Models\Setting;
@@ -85,10 +86,15 @@ class HomeController extends Controller
             ], 404);
         }
 
+        $greeting = Greeting::create([
+            'guest_id' => $guest->id,
+            'greet' => $request->greet,
+        ]);
+
         return response()->json([
             'success' => true,
             'message' => '',
-            'data' => $request->all(),
+            'data' => $greeting,
         ], 200);
     }
 

@@ -44,6 +44,10 @@ class GuestController extends AppBaseController
     {
         $input = $request->all();
 
+        if (empty($input['code'])) {
+            $input['code'] = rand(111,999) . '-' . str_replace(' ', '-', strtolower($request->name));
+        }
+
         $guest = $this->guestRepository->create($input);
 
         Flash::success('Guest saved successfully.');
@@ -96,7 +100,13 @@ class GuestController extends AppBaseController
             return redirect(route('guests.index'));
         }
 
-        $guest = $this->guestRepository->update($request->all(), $id);
+        $input = $request->all();
+
+        if (empty($input['code'])) {
+            $input['code'] = rand(1000,9999) . '-' . str_replace(' ', '-', strtolower($request->name));
+        }
+
+        $guest = $this->guestRepository->update($input, $id);
 
         Flash::success('Guest updated successfully.');
 

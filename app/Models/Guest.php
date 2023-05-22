@@ -23,7 +23,7 @@ class Guest extends Model
     ];
 
     public static array $rules = [
-        'code' => 'required|string|max:255',
+        'code' => 'nullable|string|max:255',
         'name' => 'required|string|max:255',
         'created_at' => 'nullable',
         'updated_at' => 'nullable',

@@ -35,7 +35,7 @@
 @push('third_party_scripts')
     <script>
         $(document).ready(function() {
-            
+            greetingGetData();
         });
         $("#greetingForm").on("submit", function (e) {
             e.preventDefault();
@@ -63,6 +63,22 @@
                         'success'
                     )
                     $('#greet').val('');
+                    greetingGetData();
+                }
+            })
+        }
+    </script>
+
+    <script>
+        function greetingGetData() {
+            $.ajax({
+                url : '{{ url()->current() }}',
+                method: 'GET',
+                data: {
+                    "action": "greeting-get-data"
+                },
+                success: function(result) {
+                    console.log(result);
                 }
             })
         }

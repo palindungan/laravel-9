@@ -31,6 +31,16 @@ class HomeController extends Controller
      */
     public function index($code = null)
     {
+        if (request()->action == 'greeting-get-data') {
+            $greetings = Greeting::orderBy('created_at', 'desc')->get();
+
+            return response()->json([
+                'success' => true,
+                'message' => '',
+                'data' => $greetings,
+            ], 200);
+        }
+
         $guest = Guest::where('code', $code)->first();
         if (empty($guest)) {
             return view('page_not_found');

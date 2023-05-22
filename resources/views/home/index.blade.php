@@ -64,8 +64,10 @@
 
 @push('third_party_scripts')
     <script>
-        $('#exampleModalCenter').modal('show');
-        // $('#exampleModalCenter').modal('hide');
+        $(document).ready(function() {
+            $('#exampleModalCenter').modal('show');
+            // $('#exampleModalCenter').modal('hide');
+        });
 
         $('#exampleModalCenter').on('hidden.bs.modal', function () {
             $('#audio')[0].play();

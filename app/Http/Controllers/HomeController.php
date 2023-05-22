@@ -75,6 +75,23 @@ class HomeController extends Controller
             ->with('setting', $setting);
     }
 
+    public function greetingStore(Request $request)
+    {
+        $guest = Guest::where('code', $request->code)->first();
+        if (empty($guest)) {
+            return response()->json([
+                'success' => false,
+                'message' => '',
+            ], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => '',
+            'data' => $request->all(),
+        ], 200);
+    }
+
     public function backup()
     {
         return view('_backup.home.index');

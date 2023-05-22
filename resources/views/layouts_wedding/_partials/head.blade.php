@@ -19,6 +19,8 @@
 <meta name="twitter:url" content="" />
 <meta name="twitter:card" content="" />
 
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+
 <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet'
     type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">

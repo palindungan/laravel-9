@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/{code?}', [App\Http\Controllers\HomeController::class, 'index']);
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/greeting-store', [App\Http\Controllers\HomeController::class, 'greetingStore']);
+
 Route::get('/backup', [App\Http\Controllers\HomeController::class, 'backup']);
 Route::get('/404', [App\Http\Controllers\HomeController::class, 'pageNotFound']);

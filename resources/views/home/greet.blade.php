@@ -32,10 +32,10 @@
     </div>
 </div>
 
-<div id="fh5co-couple-story" class="greetings-class">
+<div id="fh5co-couple-story" class="greetings-class" style="display: none">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-bottom: 0px;">
+            <div class="col-md-12 text-center fh5co-heading animate-box" style="margin-bottom: 0px;">
                 <h2>Ucapan</h2>
                 <div id="greetings-list">
                     <hr style="border: 1px solid;">
@@ -90,6 +90,7 @@
 
     <script>
         function greetingGetData() {
+            $('.greetings-class').hide();
             $.ajax({
                 url : '{{ url()->current() }}',
                 method: 'GET',
@@ -102,8 +103,8 @@
                     $.each(arr, function(index, value) {
                         html += `
                             <hr style="border: 1px solid;">
-                            <h2 style="font-size: 25px; font-family: 'Work Sans', Arial, sans-serif;">ِNama Pengirim</h2>
-                            <p style="">Pesan</p>
+                            <h2 style="font-size: 25px; font-family: 'Work Sans', Arial, sans-serif;">ِ` + value.guest_name + `</h2>
+                            <p style="">` + value.greet + `</p>
                         `;
                     });
                     $('#greetings-list').html(html);
@@ -114,6 +115,10 @@
                     } else {
                         $('#next_page_btn').hide();
                         next_page_url = null;
+                    }
+
+                    if (result.data.data) {
+                        $('.greetings-class').show();
                     }
                 }
             })
@@ -135,8 +140,8 @@
                         $.each(arr, function(index, value) {
                             html += `
                                 <hr style="border: 1px solid;">
-                                <h2 style="font-size: 25px; font-family: 'Work Sans', Arial, sans-serif;">ِNama Pengirim</h2>
-                                <p style="">Pesan</p>
+                                <h2 style="font-size: 25px; font-family: 'Work Sans', Arial, sans-serif;">ِ` + value.guest_name + `</h2>
+                                <p style="">` + value.greet + `</p>
                             `;
                         });
                         $('#greetings-list').append(html);

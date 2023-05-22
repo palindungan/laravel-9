@@ -9,6 +9,7 @@ use App\Models\Guest;
 use App\Models\PhotoGallery;
 use App\Models\Setting;
 use App\Models\Wedding;
+use App\Repositories\GreetingRepository;
 use App\Repositories\WeddingRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -32,7 +33,13 @@ class HomeController extends Controller
     public function index($code = null)
     {
         if (request()->action == 'greeting-get-data') {
-            $greetings = Greeting::orderBy('created_at', 'desc')->simplePaginate(5);
+            $greetings = GreetingRepository::getData()
+                ->select(
+                    'greetings.*',
+                    DB::raw('guests.name as guest_name'),
+                )
+                ->orderBy('greetings.created_at', 'desc')
+                ->simplePaginate(5);
 
             return response()->json([
                 'success' => true,

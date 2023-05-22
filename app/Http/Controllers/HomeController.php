@@ -32,7 +32,7 @@ class HomeController extends Controller
     public function index($code = null)
     {
         if (request()->action == 'greeting-get-data') {
-            $greetings = Greeting::orderBy('created_at', 'desc')->get();
+            $greetings = Greeting::orderBy('created_at', 'desc')->simplePaginate(5);
 
             return response()->json([
                 'success' => true,

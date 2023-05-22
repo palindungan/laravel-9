@@ -22,11 +22,6 @@
         </div>
     </header>
 
-    <audio id="audio" controls loop style="width: 100%;">
-        <source src="{{ asset('background-music.mp3') }}" type="audio/mpeg">
-        Please update your browser does not support the audio element.
-    </audio>
-
     @include('home.couple')
 
     @include('home.schedule')
@@ -60,13 +55,17 @@
             </div>
         </div>
     </div>
+
+    <audio id="audio" controls loop style="width: 100%;">
+        <source src="{{ asset('background-music.mp3') }}" type="audio/mpeg">
+        Please update your browser does not support the audio element.
+    </audio>
 @endsection
 
 @push('third_party_scripts')
     <script>
         $(document).ready(function() {
             $('#exampleModalCenter').modal('show');
-            // $('#exampleModalCenter').modal('hide');
         });
 
         $('#exampleModalCenter').on('hidden.bs.modal', function () {

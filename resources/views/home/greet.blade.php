@@ -57,7 +57,12 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function (result) {
-                    console.log(result);
+                    Swal.fire(
+                        'Pesan Terkirim!',
+                        'Terima kasih',
+                        'success'
+                    )
+                    $('#greet').val('');
                 }
             })
         }

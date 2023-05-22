@@ -55,3 +55,5 @@
 -->
 
 <link rel="stylesheet" href="{{ asset('css/snow.css') }}">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css">

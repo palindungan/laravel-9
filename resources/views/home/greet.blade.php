@@ -32,6 +32,19 @@
     </div>
 </div>
 
+<div id="fh5co-couple-story" class="greetings-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-bottom: 0px;">
+                <h2>Ucapan</h2>
+                <hr style="border: 1px solid;">
+                <h2 style="font-size: 30px;">ِNama Pengirim</h2>
+                <p style="">Pesan</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 @push('third_party_scripts')
     <script>
         $(document).ready(function() {

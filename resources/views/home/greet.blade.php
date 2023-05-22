@@ -42,6 +42,10 @@
                     <h2 style="font-size: 30px;">ِNama Pengirim</h2>
                     <p style="">Pesan</p>
                 </div>
+                <button type="button" class="btn btn-primary" id="next_page_btn" style="display: none" onclick="greetingGetDataNext();">
+                    {{-- <i class="fa fa-eye" aria-hidden="true"></i>  --}}
+                    Lihat Lainnya
+                </button>
             </div>
         </div>
     </div>
@@ -103,8 +107,52 @@
                         `;
                     });
                     $('#greetings-list').html(html);
+
+                    if (result.data.next_page_url) {
+                        $('#next_page_btn').show();
+                        next_page_url = result.data.next_page_url;
+                    } else {
+                        $('#next_page_btn').hide();
+                        next_page_url = null;
+                    }
                 }
             })
+        }
+
+        var next_page_url = null;
+        function greetingGetDataNext() {
+            $('#next_page_btn').prop('disabled', true);
+            if (next_page_url) {
+                $.ajax({
+                    url : next_page_url,
+                    method: 'GET',
+                    data: {
+                        "action": "greeting-get-data"
+                    },
+                    success: function(result) {
+                        var html = ``;
+                        var arr = result.data.data;
+                        $.each(arr, function(index, value) {
+                            html += `
+                                <hr style="border: 1px solid;">
+                                <h2 style="font-size: 25px; font-family: 'Work Sans', Arial, sans-serif;">ِNama Pengirim</h2>
+                                <p style="">Pesan</p>
+                            `;
+                        });
+                        $('#greetings-list').append(html);
+
+                        if (result.data.next_page_url) {
+                            $('#next_page_btn').show();
+                            next_page_url = result.data.next_page_url;
+                        } else {
+                            $('#next_page_btn').hide();
+                            next_page_url = null;
+                        }
+
+                        $('#next_page_btn').prop('disabled', false);
+                    }
+                })
+            }
         }
     </script>
 @endpush

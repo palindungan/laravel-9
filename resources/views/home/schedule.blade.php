@@ -1,4 +1,10 @@
-<div id="fh5co-event" class="fh5co-bg" style="background-image:url({{ asset('wedding-master/images/img_bg_3.jpg') }});">
+<div id="fh5co-event" class="fh5co-bg" 
+    style="
+        background-image: url({{ asset('wedding-master/images/img_bg_3.jpg') }}); 
+        background-repeat: no-repeat;
+        background-position: center
+    "
+>
     <div class="overlay"></div>
     <div class="container">
         <div class="row">

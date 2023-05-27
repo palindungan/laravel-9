@@ -1,8 +1,14 @@
 @extends('layouts_wedding.app')
 
 @section('content')
-    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({{ asset('wedding-master/images/img_bg_2.jpg') }}); height: 850px;"
-        data-stellar-background-ratio="0.5">
+    <header id="fh5co-header" class="fh5co-cover" role="banner" 
+        style="
+            height: 850px;
+            min-height: 100%;
+            background-image: url({{ asset('wedding-master/images-fixed/bg-index.jpg') }}); 
+            background-repeat: no-repeat;
+            background-position: center
+        ">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -52,9 +58,9 @@
                 <div class="modal-body" 
                     style="
                         text-align: center; 
-                        background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url({{ asset('wedding-master/images-fixed/modal-bg.jpg') }}); 
+                        background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url({{ asset('wedding-master/images-fixed/bg-modal.jpg') }}); 
                         height: 100%;
-                        background-repeat:no-repeat;
+                        background-repeat: no-repeat;
                         background-position: center center;
                     "
                 >

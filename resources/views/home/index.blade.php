@@ -49,7 +49,15 @@
                         Modal title
                     </h5>
                 </div> --}}
-                <div class="modal-body" style="text-align: center; background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url({{ asset('wedding-master/images/img_bg_2.jpg') }}); height: 100%;">
+                <div class="modal-body" 
+                    style="
+                        text-align: center; 
+                        background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url({{ asset('wedding-master/images-fixed/modal-bg.jpg') }}); 
+                        height: 100%;
+                        background-repeat:no-repeat;
+                        background-position: center center;
+                    "
+                >
                     <h2 style="color: white; font-size: 25px; margin-top: 50px; font-weight: 800;">Undangan Pernikahan</h2>
                     <h1 style="color: white; font-size: 45px; font-weight: 500; line-height: 1.5; font-family: 'Sacramento', Arial, serif;">{{ @$bride->name_short }} &amp; {{ @$groom->name_short }}</h1>
                     <h2 style="color: white; font-size: 20px; margin-top: 80px; margin-bottom: 15px;">Dear Mr/Mrs/Ms</h2>

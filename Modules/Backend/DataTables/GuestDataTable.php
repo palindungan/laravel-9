@@ -18,7 +18,12 @@ class GuestDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'backend::guests.datatables_actions');
+        return $dataTable
+            ->editColumn('code', function($row) {
+                return  '<a target="_blank" href="'. url('') . '/' . $row->code .'">'. url('') . '/' . $row->code .'</a>';
+            })
+            ->addColumn('action', 'backend::guests.datatables_actions')
+            ->rawColumns(['code', 'action']);
     }
 
     /**

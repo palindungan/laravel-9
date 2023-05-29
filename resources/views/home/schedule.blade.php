@@ -28,8 +28,8 @@
                                     </div>
                                     <div class="event-col">
                                         <i class="icon-calendar"></i>
-                                        <span>Saptu {{ @$item->date_start->format("d") }}</span>
-                                        <span>Juli, {{ @$item->date_start->format("Y") }}</span>
+                                        <span>{{ @$item->date_start->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format("l") }} {{ @$item->date_start->format("d") }}</span>
+                                        <span>{{ @$item->date_start->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format("F") }}, {{ @$item->date_start->format("Y") }}</span>
                                     </div>
                                     <p style="margin-bottom: 0px;">{{ @$item->place }}</p>
                                     <p>{{ @$item->address }}</p>

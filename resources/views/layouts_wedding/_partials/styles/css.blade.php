@@ -13,7 +13,7 @@
     .tooltip .tooltiptext {
         visibility: hidden;
         width: 140px;
-        background-color: #555;
+        background-color: #4fa03f;
         color: #fff;
         text-align: center;
         border-radius: 6px;
@@ -35,7 +35,7 @@
         margin-left: -5px;
         border-width: 5px;
         border-style: solid;
-        border-color: #555 transparent transparent transparent;
+        border-color: #4fa03f transparent transparent transparent;
     }
 
     .tooltip:hover .tooltiptext {
@@ -89,5 +89,75 @@
         position: relative;
         width: auto;
         margin: 0px;
+    }
+</style>
+
+<style>
+    .simply-countdown > .simply-section {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: rgb(8 84 10 / 80%);
+        margin: 0 4px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        border-radius: 50%;
+        position: relative;
+        animation: pulse 1s ease infinite;
+    }
+
+    .fh5co-heading h2 {
+        font-size: 60px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+        font-weight: bold;
+        color: rgb(8 84 10 / 80%);
+        font-family: "Sacramento", Arial, serif;
+    }
+
+    .fh5co-heading p {
+        font-size: 18px;
+        line-height: 1.5;
+        color: rgb(8 84 10 / 80%);
+    }
+
+    .couple-half h3 {
+        font-family: "Sacramento", Arial, serif;
+        color: rgb(8 84 10 / 80%);
+        font-size: 30px;
+    }
+
+    body {
+        font-family: "Work Sans", Arial, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.7;
+        color: rgb(8 84 10 / 80%);
+        background: #fff;
+    }
+
+    .btn-custom {
+        background: rgb(8 84 10 / 80%);
+        color: #fff;
+        border: 0px;
+    }
+
+    .btn-primary {
+        background: rgb(8 84 10 / 80%);
+        color: #fff;
+        border: 0px;
+    }
+
+    #fh5co-started .btn {
+        height: 54px;
+        border: none !important;
+        background: rgb(8 84 10 / 80%);
+        color: #fff;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 400;
+        padding-left: 50px;
+        padding-right: 50px;
     }
 </style>

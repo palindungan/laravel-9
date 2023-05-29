@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-bottom: 20px;">
-                <span>{{ @$setting['5_1']->value }}</span>
+                <span style="color: rgb(8 84 10 / 80%);">{{ @$setting['5_1']->value }}</span>
                 <h2>{{ @$setting['5_2']->value }}</h2>
                 {{-- <p>{{ @$setting['5_3']->value }}</p> --}}
             </div>

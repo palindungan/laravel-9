@@ -8,7 +8,7 @@
                 <p>{!! QrCode::size(150)->generate(@$setting['6_4']->value) !!}</p>
                 <p style="">{{ @$setting['6_3']->value }}</p>
                 <p>
-                    <input type="text" class="btn btn-info btn-sm" readonly value="{{ @$setting['6_4']->value }}" id="account">
+                    <input type="text" class="btn btn-custom btn-sm" readonly value="{{ @$setting['6_4']->value }}" id="account">
                 </p>
                 <p>
                     <button class="btn btn-default btn-sm" onclick="accountCopy()" onmouseout="accountOut()">

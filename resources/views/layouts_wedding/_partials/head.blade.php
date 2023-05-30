@@ -2,22 +2,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Undangan Pernikahan</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Undangan Pernikahan" />
+<meta name="description" content="Pernikahan Salsa & Rizki" />
 <meta name="keywords" content="undangan, pernikahan" />
 <meta name="author" content="Rizkika Zakka Palindungan" />
 
 <link rel="icon" type="image/x-icon" href="{{ asset('wedding/icons/logo_circle_32.png') }}">
 
-<!-- Facebook and Twitter integration -->
-<meta property="og:title" content="" />
-<meta property="og:image" content="" />
-<meta property="og:url" content="" />
-<meta property="og:site_name" content="" />
-<meta property="og:description" content="" />
-<meta name="twitter:title" content="" />
-<meta name="twitter:image" content="" />
-<meta name="twitter:url" content="" />
-<meta name="twitter:card" content="" />
+<meta property='og:title' content='Undangan Pernikahan'/>
+<meta property='og:image' content='{{ asset('wedding-master/images-fixed/bg-index2.jpg') }}'/>
+<meta property='og:description' content='Undangan Pernikahan Salsa & Rizki'/>
+<meta property='og:url' content='{{ Request::url() }}'/>
+<meta property='og:image:width' content='1200' />
+<meta property='og:image:height' content='806' />
+<meta property="og:type" content='website'/>
 
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 

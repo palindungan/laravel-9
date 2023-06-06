@@ -17,14 +17,19 @@
             <div class="display-t">
                 <div class="display-tc">
                     <div class="col-md-10 col-md-offset-1">
-                        @foreach (@$events as $item)
+                        @foreach (@$events as $key => $item)
                             <div class="col-md-12 col-sm-12 text-center">
                                 <div class="event-wrap animate-box">
                                     <h3>{{ @$item->name }}</h3>
                                     <div class="event-col">
                                         <i class="icon-clock"></i>
-                                        <span>{{ \Carbon\Carbon::parse(@$item->time_start)->format("H:i") }}</span>
-                                        <span>{{ \Carbon\Carbon::parse(@$item->time_end)->format("H:i") }}</span>
+                                        @if ($key == 0 && !empty(@$guest->time_start) && !empty(@$guest->time_end))
+                                            <span>{{ \Carbon\Carbon::parse(@$guest->time_start)->format("H:i") }}</span>
+                                            <span>{{ \Carbon\Carbon::parse(@$guest->time_end)->format("H:i") }}</span>
+                                        @else
+                                            <span>{{ \Carbon\Carbon::parse(@$item->time_start)->format("H:i") }}</span>
+                                            <span>{{ \Carbon\Carbon::parse(@$item->time_end)->format("H:i") }}</span>
+                                        @endif
                                     </div>
                                     <div class="event-col">
                                         <i class="icon-calendar"></i>

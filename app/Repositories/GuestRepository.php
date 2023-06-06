@@ -9,7 +9,13 @@ class GuestRepository extends BaseRepository
 {
     protected $fieldSearchable = [
         'code',
-        'name'
+        'name',
+        'date_start',
+        'date_end',
+        'time_start',
+        'time_end',
+        'place',
+        'address'
     ];
 
     public function getFieldsSearchable(): array

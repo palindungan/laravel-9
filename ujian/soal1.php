@@ -35,7 +35,7 @@ function sortCharacter($str) {
     return array($sortedVowels, $sortedConsonants);
 }
 
-// Contoh penggunaan
+// INPUT NILAI DISINI
 $input = "Sample Case";
 list($vowels, $consonants) = sortCharacter($input);
 

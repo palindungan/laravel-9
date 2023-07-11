@@ -1,5 +1,6 @@
 <?php
 
+// INPUT NILAI DISINI
 $countFamily = '5';
 $memberFamily = '1 2 4 3 3';
 

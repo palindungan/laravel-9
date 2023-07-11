@@ -1,51 +1,58 @@
 <?php
+function sortCharacter($str) {
+    $str = strtolower($str); // Mengubah string menjadi huruf kecil
+    $vowels = '';
+    $consonants = '';
 
-function sortCharactersByType($string) {
-    $string = strtolower($string); // Convert the string to lowercase
-    $characters = str_split($string); // Convert the string to an array of characters
-    $vowels = array();
-    $consonants = array();
-
-    foreach ($characters as $character) {
-        if ($character != ' ') { // Ignore white spaces
-            if (isVowel($character)) {
-                $vowels[] = $character;
+    // Memisahkan karakter vokal dan konsonan
+    for ($i = 0; $i < strlen($str); $i++) {
+        $char = $str[$i];
+        if (ctype_alpha($char)) {
+            if (in_array($char, ['a', 'e', 'i', 'o', 'u'])) {
+                $vowels .= $char;
             } else {
-                $consonants[] = $character;
+                $consonants .= $char;
             }
         }
     }
 
-    sort($vowels); // Sort the vowel array
-    sort($consonants); // Sort the consonant array
+    // Mengurutkan karakter vokal dan konsonan berdasarkan urutan kemunculan
+    $vowels = str_split($vowels);
+    $consonants = str_split($consonants);
 
-    $sortedVowels = implode('', $vowels); // Convert the sorted vowel array back to a string
-    $sortedConsonants = implode('', $consonants); // Convert the sorted consonant array back to a string
+    // Mengurutkan karakter vokal dan konsonan sesuai urutan kemunculan
+    $charCounts = array_count_values(array_merge($vowels, $consonants));
+    $sortedVowels = '';
+    $sortedConsonants = '';
+    foreach ($charCounts as $char => $count) {
+        if (in_array($char, $vowels)) {
+            $sortedVowels .= str_repeat($char, $count);
+        } else {
+            $sortedConsonants .= str_repeat($char, $count);
+        }
+    }
 
-    return array('vowels' => $sortedVowels, 'consonants' => $sortedConsonants);
+    return array($sortedVowels, $sortedConsonants);
 }
 
-function isVowel($character) {
-    $vowels = array('a', 'e', 'i', 'o', 'u');
-    return in_array($character, $vowels);
-}
+// Contoh penggunaan
+$input = "Sample Case";
+list($vowels, $consonants) = sortCharacter($input);
 
-// Example usage
-$inputString = "Sample Case";
-$sortedCharacters = sortCharactersByType($inputString);
-echo "Original string: " . $inputString . "<br>";
-echo "Sorted vowels: " . $sortedCharacters['vowels'] . "<br>";
-echo "Sorted consonants: " . $sortedCharacters['consonants'];
+echo "Masukkan satu baris kata: " . $input . "<br>";
+echo "Karakter Vokal:<br>";
+echo $vowels . "<br>";
+echo "Karakter Konsonan:<br>";
+echo $consonants . "<br>";
 
-echo "<br>";
-echo "<br>";
+echo "<br><br>";
 
-// Example usage
-$inputString = "Next Case";
-$sortedCharacters = sortCharactersByType($inputString);
-echo "Original string: " . $inputString . "<br>";
-echo "Sorted vowels: " . $sortedCharacters['vowels'] . "<br>";
-echo "Sorted consonants: " . $sortedCharacters['consonants'];
+$input = "Next Case";
+list($vowels, $consonants) = sortCharacter($input);
 
-
+echo "Masukkan satu baris kata: " . $input . "<br>";
+echo "Karakter Vokal:<br>";
+echo $vowels . "<br>";
+echo "Karakter Konsonan:<br>";
+echo $consonants . "<br>";
 ?>

@@ -1,7 +1,7 @@
 <?php
 
-$countFamily = '8';
-$memberFamily = '2 3 4 4 2 1 3 1';
+$countFamily = '5';
+$memberFamily = '1 2 4 3 3';
 
 function calculateMinimumBuses($familyMembers) {
     $totalFamilyMembers = array_sum($familyMembers); // Jumlah total anggota keluarga
